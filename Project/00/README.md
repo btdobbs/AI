@@ -210,7 +210,7 @@ def add(a, b):
 
 The tests called this with a and b set to different values, but the code always returned zero. Modify this definition to read:
 
-```
+```python
 def add(a, b):
     "Return the sum of a and b"
     print("Passed a = %s and b = %s, returning a + b = %s" % (a, b, a + b))
@@ -219,7 +219,7 @@ def add(a, b):
 
 Now rerun the autograder (omitting the results for questions 2 and 3):
 
-```
+```sh
 % python autograder.py -q q1
 Starting on 1-22 at 23:12:08
 Question q1
