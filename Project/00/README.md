@@ -269,7 +269,9 @@ You now pass all tests, getting full marks for question 1. Notice the new lines 
 
 Implement the buyLotsOfFruit(orderList) function in buyLotsOfFruit.py which takes a list of (fruit,numPounds) tuples and returns the cost of your list. If there is some fruit in the list which doesn’t appear in fruitPrices it should print an error message and return None . Please do not change the fruitPrices variable.
 
-Run python autograder.py until question 2 passes all tests and you get full marks. Each test will confirm that buyLotsOfFruit(orderList) returns the correct answer given various possible inputs. For example, test_cases/q2/food_price1.test tests whether:
+Run python autograder.py until question 2 passes all tests and you get full marks. Each test will confirm that buyLotsOfFruit(orderList) returns the correct answer given various possible inputs. 
+    
+For example, test_cases/q2/food_price1.test tests whether:
 
 ```python
 Cost of [('apples', 2.0), ('pears', 3.0), ('limes', 4.0)] is 12.25
@@ -279,7 +281,9 @@ Cost of [('apples', 2.0), ('pears', 3.0), ('limes', 4.0)] is 12.25
 
 Fill in the function shopSmart(orderList,fruitShops) in shopSmart.py , which takes an orderList (like the kind passed in to FruitShop.getPriceOfOrder ) and a list of FruitShop and returns the FruitShop where your order costs the least amount in total. Don’t change the file name or variable names, please. Note that we will provide the shop.py implementation as a “support” file, so you don’t need to submit yours.
 
-Run python autograder.py until question 3 passes all tests and you get full marks. Each test will confirm that shopSmart(orderList,fruitShops) returns the correct answer given various possible inputs. For example, with the following variable definitions:
+Run python autograder.py until question 3 passes all tests and you get full marks. Each test will confirm that shopSmart(orderList,fruitShops) returns the correct answer given various possible inputs. 
+    
+For example, with the following variable definitions:
 
 ```python
 orders1 = [('apples', 1.0), ('oranges', 3.0)]
@@ -291,9 +295,18 @@ shop2 = shop.FruitShop('shop2', dir2)
 shops = [shop1, shop2]
 ```
 
-test_cases/q3/select_shop1.test tests whether: shopSmart.shopSmart(orders1, shops) == shop1
-and test_cases/q3/select_shop2.test tests whether: shopSmart.shopSmart(orders2, shops) == shop2
+test_cases/q3/select_shop1.test tests whether: 
+    
+```python
+shopSmart.shopSmart(orders1, shops) == shop1
+```
+    
+test_cases/q3/select_shop2.test tests whether: 
 
+```python
+shopSmart.shopSmart(orders2, shops) == shop2
+```
+    
 ## Submission
 
 * addition.py
