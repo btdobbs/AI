@@ -8,7 +8,7 @@
 
 *Office Hours:* Please request through starfish
 
-*Textbook:* Artificial Intelligence: A Modern Approach (4th edition) by Stuart Russell and Peter Norvig ([sample code](https://github.com/aimacode))
+*Textbook:* [Artificial Intelligence: A Modern Approach (4th edition) by Stuart Russell and Peter Norvig](https://aima.cs.berkeley.edu/index.html) ([sample code](https://github.com/aimacode))
 
 ## Learning Outcomes
 After successful completion of the course, a student will demonstrate knowledge of the following:
