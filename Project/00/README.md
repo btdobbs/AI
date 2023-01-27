@@ -127,9 +127,11 @@ If we run it before editing any files we get a page or two of output:
 
 ```sh
 % python autograder.py
-Starting on 1-21 at 23:39:51
+Starting on 1-27 at 15:50:33
+    
 Question q1
 ===========
+    
 *** FAIL: test_cases/q1/addition1.test
 ***     add(a, b) must return the sum of a and b
 ***     student result: "0"
@@ -143,9 +145,13 @@ Question q1
 ***     student result: "0"
 ***     correct result: "7.9"
 *** Tests failed.
+    
 ### Question q1: 0/1 ###
+    
+    
 Question q2
 ===========
+    
 *** FAIL: test_cases/q2/food_price1.test
 ***     buyLotsOfFruit must compute the correct cost of the order
 ***     student result: "0.0"
@@ -159,9 +165,13 @@ Question q2
 ***     student result: "0.0"
 ***     correct result: "6.4375"
 *** Tests failed.
+    
 ### Question q2: 0/1 ###
+    
+    
 Question q3
 ===========
+    
 Welcome to shop1 fruit shop
 Welcome to shop2 fruit shop
 *** FAIL: test_cases/q3/select_shop1.test
@@ -182,8 +192,12 @@ Welcome to shop3 fruit shop
 ***     student result: "None"
 ***     correct result: "<FruitShop: shop3>"
 *** Tests failed.
+    
 ### Question q3: 0/1 ###
-Finished at 23:39:51
+    
+    
+Finished at 15:50:33
+    
 Provisional grades
 ==================
 Question q1: 0/1
@@ -191,6 +205,7 @@ Question q2: 0/1
 Question q3: 0/1
 ------------------
 Total: 0/3
+    
 Your grades are NOT yet registered.  To register your grades, make sure
 to follow your instructor's guidelines to receive credit on your project.
 ```
@@ -221,22 +236,31 @@ Now rerun the autograder (omitting the results for questions 2 and 3):
 
 ```sh
 % python autograder.py -q q1
-Starting on 1-22 at 23:12:08
+Starting on 1-27 at 16:00:51
+    
 Question q1
 ===========
- *** PASS: test_cases/q1/addition1.test
- ***     add(a,b) returns the sum of a and b
- *** PASS: test_cases/q1/addition2.test
- ***     add(a,b) returns the sum of a and b
- *** PASS: test_cases/q1/addition3.test
- ***     add(a,b) returns the sum of a and b
- ### Question q1: 1/1 ###
- Finished at 23:12:08
- Provisional grades
- ==================
- Question q1: 1/1
- ------------------
+    
+*** PASS: test_cases/q1/addition1.test
+***     add(a,b) returns the sum of a and b
+*** PASS: test_cases/q1/addition2.test
+***     add(a,b) returns the sum of a and b
+*** PASS: test_cases/q1/addition3.test
+***     add(a,b) returns the sum of a and b
+    
+### Question q1: 1/1 ###
+    
+    
+Finished at 16:00:51
+    
+Provisional grades
+==================
+Question q1: 1/1
+------------------
 Total: 1/1
+    
+Your grades are NOT yet registered.  To register your grades, make sure
+to follow your instructor's guidelines to receive credit on your project.
 ```
 
 You now pass all tests, getting full marks for question 1. Notice the new lines “Passed a=...” which appear before “*** PASS: ...”. These are produced by the print statement in add . You can use print statements like that to output information useful for debugging.
