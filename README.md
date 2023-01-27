@@ -71,34 +71,34 @@ I encourage you to try to be less worried about grades than you are. If you focu
 | Week | Day | Date         | Topic                                   | Chapter | Practice | Project |
 | :--: | :-: | ------------ | --------------------------------------- | :-----: | :------: | :-----: |
 | 1    | 1   | Tue Feb 7    | Introduction                            | 1       |          |         |
-|      | 2   | Thu Feb 9    | Intelligent Agents                      | 2       | 0 Due    | 0 Due   |
+|      | 2   | Thu Feb 9    | Intelligent Agents                      | 2       | [0 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/00)    | [0 Due](https://github.com/btdobbs/COSC-440/tree/main/Project/00)   |
 | 2    | 3   | Tue Feb 14   | Solving Problems by Searching           | 3       |          |         |
 |      | 4   | Thu Feb 16   | ↓                                       | ↓       |          |         |
 | 3    | 5   | Tue Feb 21   | Adversarial Search and Games            | 5       |          |         |
-|      | 6   | Thu Feb 23   | ↓                                       | ↓       | 1 Due    |         |
+|      | 6   | Thu Feb 23   | ↓                                       | ↓       | [1 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/01)    |         |
 | 4    | 7   | Tue Feb 28   | Constraint Satisfaction Problems        | 6       |          |         |
-|      | 8   | Thu Mar 2    | ↓                                       | ↓       | 2 Due    |         |
-| 5    | 9   | Tue Mar 7    | Probabilistic Reasoning                 | 13      |          | 1 Due   |
-|      | 10  | Thu Mar 9    | ↓                                       | ↓       | 3 Due    |         |
+|      | 8   | Thu Mar 2    | ↓                                       | ↓       | [2 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/02)    |         |
+| 5    | 9   | Tue Mar 7    | Probabilistic Reasoning                 | 13      |          | [1 Due](https://github.com/btdobbs/COSC-440/tree/main/Project/01)   |
+|      | 10  | Thu Mar 9    | ↓                                       | ↓       | [3 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/03)    |         |
 | 6    | 11  | Tue Mar 14   | Probabilistic Reasoning over Time       | 14      |          |         |
-|      | 12  | Thu Mar 16   | ↓                                       | ↓       | 4 Due    |         |
-| 7    | 13  | Tue Mar 21   | Probabilistic Programming               | 15      |          | 2 Due   |
-|      | 14  | Thu Mar 23   | ↓                                       | ↓       | 5 Due    |         |
+|      | 12  | Thu Mar 16   | ↓                                       | ↓       | [4 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/04)    |         |
+| 7    | 13  | Tue Mar 21   | Probabilistic Programming               | 15      |          | [2 Due](https://github.com/btdobbs/COSC-440/tree/main/Project/02)   |
+|      | 14  | Thu Mar 23   | ↓                                       | ↓       | [5 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/05)    |         |
 | 8    | 15  | Tue Mar 28   | Making Simle Decisions                  | 16      |          |         |
 |      | 16  | Thu Mar 30   | ↓                                       | ↓       |          |         |
 |      |     | Tue Apr 4    | Spring Holiday                          |         |          |         |
 |      |     | Thu Apr 6    | ↓                                       |         |          |         |
 | 9    | 17  | Tue Apr 11   | Making Complex Decisions                | 17      |          |         |
-|      | 18  | Thu Apr 13   | ↓                                       | ↓       | 6 Due    |         |
-| 10   | 19  | Tue Apr 18   | Multiagent Decision Making              | 18      |          | 3 Due   |
-|      | 20  | Thu Apr 20   | ↓                                       | ↓       | 7 Due    |         |
+|      | 18  | Thu Apr 13   | ↓                                       | ↓       | [6 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/06)    |         |
+| 10   | 19  | Tue Apr 18   | Multiagent Decision Making              | 18      |          | [3 Due](https://github.com/btdobbs/COSC-440/tree/main/Project/03)   |
+|      | 20  | Thu Apr 20   | ↓                                       | ↓       | [7 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/07)    |         |
 | 11   | 21  | Tue Apr 25   | Learning Probabilistic Models           | 20      |          |         |
-|      | 22  | Thu Apr 27   | ↓                                       | ↓       | 8 Due    |         |
-| 12   | 23  | Tue May 2    | Deep Learning                           | 21      |          | 4 Due   |
-|      | 24  | Thu May 4    | ↓                                       | ↓       | 9 Due    |         |
+|      | 22  | Thu Apr 27   | ↓                                       | ↓       | [8 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/08)    |         |
+| 12   | 23  | Tue May 2    | Deep Learning                           | 21      |          | [4 Due](https://github.com/btdobbs/COSC-440/tree/main/Project/04)   |
+|      | 24  | Thu May 4    | ↓                                       | ↓       | [9 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/09)    |         |
 | 13   | 25  | Tue May 9    | Philosophy, Ethics, and Safety of AI    | 27      |          |         |
-|      | 26  | Thu May 11   | The Future of AI                        | 28      | 10 Due   |         |
-|      |     | Tue May 16   | Assessment                              |         |          | 5 Due   |
+|      | 26  | Thu May 11   | The Future of AI                        | 28      | [10 Due](https://github.com/btdobbs/COSC-440/tree/main/Practice/10)   |         |
+|      |     | Tue May 16   | Assessment                              |         |          | [5 Due](https://github.com/btdobbs/COSC-440/tree/main/Project/05)   |
 
 ***This syllabus is subject to change based on the needs of the class.  I will communicate changes in class or email.***
 
