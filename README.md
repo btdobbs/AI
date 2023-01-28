@@ -13,6 +13,8 @@
 
 *Textbook:* [Artificial Intelligence: A Modern Approach (4th edition) by Stuart Russell and Peter Norvig](https://aima.cs.berkeley.edu/index.html) ([sample code](https://github.com/aimacode))
 
+![](https://github.com/btdobbs/COSC-440/blob/main/Topic/images/aima.jpg)
+
 ## Learning Outcomes
 After successful completion of the course, a student will demonstrate knowledge of the following:
 
