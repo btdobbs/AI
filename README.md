@@ -1,4 +1,7 @@
 # Course Syllabus
+
+![](https://github.com/btdobbs/COSC-440/blob/main/Topic/images/ai.png)
+
 ## Basic Information
 *Course:* COSC 440 - Artificial Intelligence, Spring 2023
 
