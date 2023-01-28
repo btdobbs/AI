@@ -2,7 +2,7 @@
 
 ## Practice Information
 
-* Submit practice as a pdf file via Moodle.
+* Submit practice as a pdf file via the institution's LMS.
 * The due dates for each practice are listed on the syllabus.
 * No late practice will be accepted without a starfish notice.
 * Your lowest practice grade will be dropped.
