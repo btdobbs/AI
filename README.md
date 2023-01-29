@@ -9,7 +9,7 @@
 
 *Class Schedule:* Tuesday and Thursday from 1:00 pm to 2:20 pm in Olin 218
 
-*Office Hours:* Please request through starfish
+*Office Hours:* Please make a formal request (i.e. starfish)
 
 *Optional Textbook:* [Artificial Intelligence: A Modern Approach (4th edition) by Stuart Russell and Peter Norvig](https://aima.cs.berkeley.edu/index.html) ([sample code](https://github.com/aimacode))
 
