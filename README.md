@@ -1,9 +1,9 @@
-# Course Syllabus
-
-![](https://github.com/btdobbs/COSC-440/blob/main/Topic/images/ai.png)
+# Course Syllabus - Artificial Intelligence
 
 ## Basic Information
-*Course:* COSC 440 - Artificial Intelligence, Spring 2023
+*Course ID:* COSC 440
+
+*Term:* Spring 2023
 
 *Professor:* Todd Dobbs, dobbsbt@wofford.edu
 
