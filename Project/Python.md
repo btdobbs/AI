@@ -489,10 +489,10 @@ So how do we make an object and use it? Make sure you have the FruitShop impleme
 ```python
 import shop
 
-shopName = 'the Berkeley Bowl'
+shopName = 'the Bowl'
 fruitPrices = {'apples': 1.00, 'oranges': 1.50, 'pears': 1.75}
-berkeleyShop = shop.FruitShop(shopName, fruitPrices)
-applePrice = berkeleyShop.getCostPerPound('apples')
+aShop = shop.FruitShop(shopName, fruitPrices)
+applePrice = aShop.getCostPerPound('apples')
 print(applePrice)
 print('Apples cost $%.2f at %s.' % (applePrice, shopName))
 
@@ -509,16 +509,16 @@ This code is in ```shopTest.py```; you can run it like this:
 
 ```sh
 [~]$ python shopTest.py
-Welcome to the Berkeley Bowl fruit shop
+Welcome to the Bowl fruit shop
 1.0
-Apples cost $1.00 at the Berkeley Bowl.
+Apples cost $1.00 at the Bowl.
 Welcome to the Stanford Mall fruit shop
 4.5
 Apples cost $4.50 at the Stanford Mall.
 My, that's expensive!
 ```
 
-So what just happended? The ```import shop``` statement told Python to load all of the functions and classes in shop.py. The line ```berkeleyShop = shop.FruitShop(shopName, fruitPrices)``` constructs an instance of the ```FruitShop``` class defined in ```shop.py```, by calling the ```__init__``` function in that class. Note that we only passed two arguments in, while ```__init__``` seems to take three arguments: ```(self, name, fruitPrices)```. The reason for this is that all methods in a class have self as the first argument. The ```self``` variable’s value is automatically set to the object itself; when calling a method, you only supply the remaining arguments. The ```self``` variable contains all the data (```name``` and ```fruitPrices```) for the current specific instance (similar to this in Java). The print statements use the substitution operator (described in the [Python docs](https://docs.python.org/3/) if you’re curious).
+So what just happended? The ```import shop``` statement told Python to load all of the functions and classes in shop.py. The line ```aShop = shop.FruitShop(shopName, fruitPrices)``` constructs an instance of the ```FruitShop``` class defined in ```shop.py```, by calling the ```__init__``` function in that class. Note that we only passed two arguments in, while ```__init__``` seems to take three arguments: ```(self, name, fruitPrices)```. The reason for this is that all methods in a class have self as the first argument. The ```self``` variable’s value is automatically set to the object itself; when calling a method, you only supply the remaining arguments. The ```self``` variable contains all the data (```name``` and ```fruitPrices```) for the current specific instance (similar to this in Java). The print statements use the substitution operator (described in the [Python docs](https://docs.python.org/3/) if you’re curious).
 
 ## Static vs Instance Variables
 
@@ -595,7 +595,7 @@ These are some problems (and their solutions) that new Python learners commonly 
 
   **Solution:** For import statements with ```import <package-name>```, do not include the file extension (i.e. the .py string). For example, you should use: ```import shop``` NOT: ```import shop.py```
 
-- **Problem:** ```NameError: name ‘MY VARIABLE’ is not defined Even after importing you may see this.```
+- **Problem:** ```NameError: name ‘MY VARIABLE’ is not defined``` Even after importing you may see this.
 
   **Solution:** To access a member of a module, you have to type ```MODULE NAME.MEMBER NAME```, where ```MODULE NAME``` is the name of the ```.py``` file, and ```MEMBER NAME``` is the name of the variable (or function) you are trying to access.
 
@@ -607,17 +607,17 @@ These are some problems (and their solutions) that new Python learners commonly 
 
   **Solution:** Make sure the number of variables you are assigning in a for loop matches the number of elements in each item of the list. Similarly for working with tuples.
 
-For example, if pair is a tuple of two elements (e.g. ```pair =('apple', 2.0)```) then the following code would cause the “too many values to unpack error”:
+  For example, if pair is a tuple of two elements (e.g. ```pair =('apple', 2.0)```) then the following code would cause the “too many values to unpack error”:
 
-```(a, b, c) = pair```
+  ```(a, b, c) = pair```
 
-Here is a problematic scenario involving a for loop:
+  Here is a problematic scenario involving a for loop:
 
-    ```python
-    pairList = [('apples', 2.00), ('oranges', 1.50), ('pears', 1.75)]
-    for fruit, price, color in pairList:
-        print('%s fruit costs %f and is the color %s' % (fruit, price, color))
-    ```
+  ```python
+  pairList = [('apples', 2.00), ('oranges', 1.50), ('pears', 1.75)]
+  for fruit, price, color in pairList:
+      print('%s fruit costs %f and is the color %s' % (fruit, price, color))
+  ```
     
 - **Problem:** ```AttributeError: ‘list’ object has no attribute ‘length’ (or something similar)```
 
