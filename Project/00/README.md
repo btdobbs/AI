@@ -6,14 +6,14 @@ The projects for this class assume you use Python 3.6.
 
 Project 0 will cover the following:
 
-* Instructions on how to set up the right Python version
-* Workflow examples
-* A mini-Python tutorial
-* Project grading: Every project’s release includes its autograder for you to run yourself
+- Instructions on how to set up the right Python version
+- Workflow examples
+- A mini-Python tutorial
+- Project grading: Every project’s release includes its autograder for you to run yourself
 
 ### Files to Edit and Submit
 
-You will fill in portions of addition.py , buyLotsOfFruit.py , and shopSmart.py. Please do not change the other files in this repository or add new files to your repository. Submit project as py file(s) via Moodle. The due dates for projects are listed on the syllabus. No late project will be accepted without a starfish notice.
+You will fill in portions of addition.py , buyLotsOfFruit.py , and shopSmart.py. Please do not change the other files in this repository or add new files to your repository. Submit project as a zip fo the py file(s) via Moodle. The due dates for projects are listed on the syllabus. No late project will be accepted without a starfish notice.
 
 ### Evaluation
 
@@ -104,18 +104,18 @@ tutorialTestClasses.py
 ```
 
 This contains a number of files you’ll edit or run:
-* addition.py : source file for question 1
-* buyLotsOfFruit.py : source file for question 2
-* shop.py : source file for question 3
-* shopSmart.py : source file for question 3
-* autograder.py : autograding script
+- addition.py : source file for question 1
+- buyLotsOfFruit.py : source file for question 2
+- shop.py : source file for question 3
+- shopSmart.py : source file for question 3
+- autograder.py : autograding script
 
 and others you can ignore:
-* test_cases : directory contains the test cases for each question
-* grading.py : autograder code
-* testClasses.py : autograder code
-* tutorialTestClasses.py : test classes for this particular project
-* projectParams.py : project parameters
+- test_cases : directory contains the test cases for each question
+- grading.py : autograder code
+- testClasses.py : autograder code
+- tutorialTestClasses.py : test classes for this particular project
+- projectParams.py : project parameters
 
 The following command grades your solution to all three problems.
 
@@ -309,6 +309,7 @@ shopSmart.shopSmart(orders2, shops) == shop2
     
 ## Submission
 
-* addition.py
-* buyLotsOfFruit.py
-* shopSmart.py
+- Zip the following files and submit
+  - addition.py
+  - buyLotsOfFruit.py
+  - shopSmart.py
