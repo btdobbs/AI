@@ -13,7 +13,7 @@ Project 0 will cover the following:
 
 ### Files to Edit and Submit
 
-You will fill in portions of ```addition.py``` , ```buyLotsOfFruit.py``` , and ```shopSmart.py```. Please do not change the other files in this repository or add new files to your repository. Submit project as a zip of the py file(s) via Moodle. The due dates for projects are listed on the syllabus. No late project will be accepted without a starfish notice.
+You will fill in portions of ```addition.py``` , ```buyLotsOfFruit.py``` , and ```shopSmart.py```. Please do not change the other files in this repository or add new files to your repository. Submit autograder results as a pdf via your institutions LMS. The due dates for projects are listed on the syllabus. No late project will be accepted without a starfish notice.
 
 ### Evaluation
 
@@ -309,7 +309,4 @@ shopSmart.shopSmart(orders2, shops) == shop2
     
 ## Submission
 
-- Zip the following files and submit
-  - ```addition.py```
-  - ```buyLotsOfFruit.py```
-  - ```shopSmart.py```
+- Submit autograder results as a pdf
