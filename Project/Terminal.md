@@ -1,4 +1,4 @@
-# Unix Basics – File/ Directory Manipulation
+# Unix Basics – File/ Directory Manipulation [^1]
 
 Windows note: similar commands are available, and things like git bash will have Unix commands.
 
@@ -82,3 +82,5 @@ Some basic Emacs editing commands (```C-``` means “while holding the Ctrl-key�
 You can also copy and paste using just the mouse. Using the left button, select a region of text to copy. Click the middle button to paste.
 
 There are two ways you can use Emacs to develop Python code. The most straightforward way is to use it just as a text editor: create and edit Python files in Emacs; then run Python to test the code somewhere else, like in a terminal window. Alternatively, you can run Python inside Emacs: see the options under “Python” in the menubar, or type ```C-c !``` to start a Python interpreter in a split screen. (Use ```C-x o``` to switch between the split screens, or just click if ```C-x``` doesn’t work).
+
+[^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
