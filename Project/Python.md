@@ -1,4 +1,4 @@
-# Required Files
+# Required Files [^1]
 
 You can download all of the files associated with the Python mini-tutorial as a zip archive: [python_basics.zip](https://github.com/btdobbs/AI/blob/main/Project/python_basics.zip). If you did the unix tutorial in the previous tab, you’ve already downloaded and unzipped this file.
 
@@ -630,3 +630,4 @@ These are some problems (and their solutions) that new Python learners commonly 
   1. Make sure you are saving all your files after any changes.
   2. If you are editing a file in a window different from the one you are using to execute python, make sure you ```reload(_YOUR_MODULE_)``` to guarantee your changes are being reflected. ```reload``` works similarly to ```import```.
 
+[^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
