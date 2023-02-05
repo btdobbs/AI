@@ -1,3 +1,5 @@
+# IDE [^1]
+
 First, you will need to download an IDE such as VS Code, IntelliJ PyCharm or Idea, etc. If you are given the option to add to path, do it. Restarting the terminal may be needed for the change to propagate. For VS Code, install the suggested plug-ins such as PyLance.
 
 # Opening the Workspace
@@ -51,4 +53,4 @@ Path is conceptually a collection of shortcuts for commands. The OS looks for th
 
 Anaconda effectively changes what ```python``` corresponds to, pointing it to a different Python interpreter. Furthermore, it keeps that Python interpreter and its installed libraries separate from everything else, all without breaking the Path variable.
 
-
+[^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
