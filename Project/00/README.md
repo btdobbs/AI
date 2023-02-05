@@ -1,4 +1,4 @@
-# Project 0 - Submitting Projects
+# Project 0 - Submitting Projects [^1]
 
 ## Introduction
 
@@ -310,3 +310,5 @@ shopSmart.shopSmart(orders2, shops) == shop2
 ## Submission
 
 - Submit autograder results as a pdf
+
+[^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
