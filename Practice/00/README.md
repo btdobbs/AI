@@ -1,4 +1,4 @@
-# Practice 0 - Submitting Practice
+# Practice 0 - Submitting Practice [^1]
 
 ## Practice Information
 
@@ -55,3 +55,5 @@ What critical operation is generally faster in a hashtable than in a linked list
 ### Question 8 - Induction
 
 Prove by induction that the sum of the first $n$ odd integers is $n^2$
+
+[^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
