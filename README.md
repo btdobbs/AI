@@ -7,7 +7,7 @@
 
 *Professor:* Todd Dobbs, dobbsbt@wofford.edu
 
-*Class Schedule:* Tuesday and Thursday from 1:00 pm to 2:20 pm in Olin 218
+*Class Schedule:* Tuesday and Thursday from 1:00 pm to 2:20 pm in MSBVC 107
 
 *Office Hours:* Please make a formal request (i.e. starfish)
 
