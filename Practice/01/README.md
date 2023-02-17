@@ -52,7 +52,7 @@ Please select the correct relationship between $b_p$ and $b_1$
 
 Scorpblorg the snail is looking for a mate. It can visit different potential mates based on a trail of ooze to nearby snails, and then test them for chemistry, as represented in the below graph, where each node represents a snail. In all cases, nodes with equal priority should be visited in alphabetical order.
 
-![graph]()
+![graph](https://github.com/btdobbs/AI/blob/main/Practice/01/graph.png)
 
 1. **Simple search**
 
