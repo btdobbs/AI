@@ -1,4 +1,4 @@
-# Unix Basics – File/ Directory Manipulation [^1]
+# Unix Basics – File/ Directory Manipulation[^1]
 
 Windows note: similar commands are available, and things like git bash will have Unix commands.
 
