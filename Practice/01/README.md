@@ -4,6 +4,8 @@ For questions with circular bubbles ($\bigcirc$), you may select only one choice
 
 For questions with square checkboxes ($\square$), you may select one or more choices.
 
+Please show all work for credit.
+
 ## Question 1: SpongeBob and Pacman (Search Formulation) (6 points)
 
 Pacman bought a car, was speeding in Pac-City, and SpongeBob wasn’t able to catch him. Now Pacman has run out of gas, his car has stopped, and he is currently hiding out at an undisclosed location. In this problem, you are on the SpongeBob side, tryin’ to catch Pacman!
