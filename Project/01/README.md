@@ -1,4 +1,4 @@
-# Project 1 - Search [^1]
+# Project 1 - Search[^1]
 
 ## Introduction
 
