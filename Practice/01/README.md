@@ -1,4 +1,4 @@
-# Practice 1 [^1]
+# Practice 1[^1]
 
 For questions with circular bubbles ($\bigcirc$), you may select only one choice.
 
