@@ -356,6 +356,9 @@ python autograder.py -q q8
 
 ## Submission
 
-In order to submit your project, run python submission_autograder.py and submit the generated report.
+In order to submit your project, run python submission_autograder.py to ensure your code is correct.  After verifying correctness, submit the following files via the standard submit process for this class.
+
+- `search.py`
+- `searchAgents.py`
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
