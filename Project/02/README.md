@@ -221,25 +221,25 @@ The pseudo-code below represents the algorithm you should implement for this que
 $\alpha$: MAX's best option on path to root
 
 ```
-def max-value(state, $$\alpha$$, B):
-  initialize v = $$-\infy$$
-  for each successor of state:
-    v = max(v, value(successor, $$\alpha$$, $$\beta$$))
-    if v > $$\beta$$ return v
-    $$\alpha$$ = max($$\alpha$$, V)
-  return v
+def max-value(state, alpha, beta):  
+  initialize v = -infinity  
+  for each successor of state:  
+    v = max(v, value(successor, alpha, beta))  
+    if v > beta return v  
+      alpha = max(alpha, V)  
+  return v  
 ```
 
 $\beta$: MIN's best option on path to root
 
 ```
-def min-value(state , $$\alpha$$, $$\beta$$):
-  initialize v = $$\infy$$
-  for each successor of state:
-    v = min(v, value (successor, $$\alpha$$, $$\beta$$))
-    if v < $$\alpha$$ return v
-    $$\beta$$ = min($$\beta$$, v)
-  return v
+def min-value(state , alpha, beta):  
+  initialize v = infinity  
+  for each successor of state:  
+    v = min(v, value (successor, alpha, beta))  
+    if v < alpha return v  
+      beta = min(beta, v)  
+  return v  
 ```
 
 To test and debug your code, run
