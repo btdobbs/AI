@@ -1,1 +1,5 @@
-# Project 3: Reinforcement Learning
+# Project 3: Reinforcement Learning[^1]
+
+
+
+[^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
