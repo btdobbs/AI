@@ -128,9 +128,9 @@ Use the “batch” version of value iteration where each vector $V_k$ is comput
 
 ### Note
 
-A policy synthesized from values of depth $k$ (which reflect the next $k$ rewards) will actually reflect the next $k+1$ rewards (i.e. you return $\pi_{k1+1}$).  Similarly, the Q-values will also reflect one more reward than the values (i.e. you return $Q_{k+1}$).
+A policy synthesized from values of depth $k$ (which reflect the next $k$ rewards) will actually reflect the next $k+1$ rewards (i.e. you return $\pi_{k+1}$).  Similarly, the Q-values will also reflect one more reward than the values (i.e. you return $Q_{k+1}$).
 
-You should return the synthesized policy $\pi_{k1+1}$.
+You should return the synthesized policy $\pi_{k+1}$.
 
 ### Hint
 
