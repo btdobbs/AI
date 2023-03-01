@@ -136,7 +136,7 @@ You should return the synthesized policy $\pi_{k+1}$.
 
 You may optionally use the `util.Counter` class in `util.py`, which is a dictionary with a default value of zero. However, be careful with `argMax`: the actual argmax you want may be a key not in the counter!
 
-## Note
+### Note
 
 Make sure to handle the case when a state has no available actions in an MDP (think about what this means for future rewards).
 
@@ -160,6 +160,8 @@ On the default `BookGrid`, running value iteration for 5 iterations should give 
 python gridworld.py -a value -i 5
 ```
 
+![q1](https://github.com/btdobbs/AI/blob/main/Project/03/images/q1.png)
+
 ### Grading
 
 Your value iteration agent will be graded on a new grid. We will check your values, Q-values, and policies after fixed numbers of iterations and at convergence (e.g. after 100 iterations).
@@ -168,7 +170,7 @@ Your value iteration agent will be graded on a new grid. We will check your valu
 
 Consider the `DiscountGrid` layout, shown below. This grid has two terminal states with positive payoff (in the middle row), a close exit with payoff +1 and a distant exit with payoff +10. The bottom row of the grid consists of terminal states with negative payoff (shown in red); each state in this “cliff” region has payoff -10. The starting state is the yellow square. We distinguish between two types of paths: (1) paths that “risk the cliff” and travel near the bottom row of the grid; these paths are shorter but risk earning a large negative payoff, and are represented by the red arrow in the figure below. (2) paths that “avoid the cliff” and travel along the top edge of the grid. These paths are longer but are less likely to incur huge negative payoffs. These paths are represented by the green arrow in the figure below.
 
-
+![q2](https://github.com/btdobbs/AI/blob/main/Project/03/images/q2.png)
 
 In this question, you will choose settings of the discount, noise, and living reward parameters for this MDP to produce optimal policies of several different types. **Your setting of the parameter values for each part should have the property that, if your agent followed its optimal policy without being subject to any noise, it would exhibit the given behavior.** If a particular behavior is not achieved for any setting of the parameters, assert that the policy is impossible by returning the string `'NOT POSSIBLE'`.
 
@@ -226,7 +228,7 @@ python gridworld.py -a q -k 5 -m
 
 Recall that -k will control the number of episodes your agent gets to learn. Watch how the agent learns about the state it was just in, not the one it moves to, and “leaves learning in its wake.” Hint: to help with debugging, you can turn off noise by using the `--noise 0.0` parameter (though this obviously makes Q-learning less interesting). If you manually steer Pacman north and then east along the optimal path for four episodes, you should see the following Q-values:
 
-
+![q3](https://github.com/btdobbs/AI/blob/main/Project/03/images/q3.png)
 
 ### Grading
 
