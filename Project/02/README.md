@@ -296,12 +296,13 @@ Write a better evaluation function for Pacman in the provided function `betterEv
 
 The autograder will run your agent on the smallClassic layout 10 times. We will assign points to your evaluation function in the following way:
 
-If you win at least once without timing out the autograder, you receive 1 points. Any agent not satisfying these criteria will receive 0 points.
-+1 for winning at least 5 times, +2 for winning all 10 times
-+1 for an average score of at least 500, +2 for an average score of at least 1000 (including scores on lost games)
-+1 if your games take on average less than 30 seconds on the autograder machine, when run with `--no-graphics`.
-The additional points for average score and computation time will only be awarded if you win at least 5 times.
-Please do not copy any files from Project 1, as it will not pass the autograder on Gradescope.
+- If you win at least once without timing out the autograder, you receive 1 points. Any agent not satisfying these criteria will receive 0 points.
+- +1 for winning at least 5 times, +2 for winning all 10 times
+- +1 for an average score of at least 500, +2 for an average score of at least 1000 (including scores on lost games)
+- +1 if your games take on average less than 30 seconds on the autograder machine, when run with `--no-graphics`.
+- The additional points for average score and computation time will only be awarded if you win at least 5 times.
+- Please do not copy any files from Project 1, as it will not pass the autograder on Gradescope.
+
 You can try your agent out under these conditions with
 
 ```sh
