@@ -323,187 +323,35 @@ Pacman fails to win on larger layouts because each board configuration is a sepa
 
 ## Question 6 (4 points): Approximate Q-Learning
 
-Implement an approximate Q-learning agent that learns weights for features of states, where many states might share the same features. Write your implementation in ApproximateQAgent class in qlearningAgents.py, which is a subclass of PacmanQAgent.
+Implement an approximate Q-learning agent that learns weights for features of states, where many states might share the same features. Write your implementation in `ApproximateQAgent` class in `qlearningAgents.py`, which is a subclass of `PacmanQAgent`.
 
-Note: Approximate Q-learning assumes the existence of a feature function 
-f
-(
-s
-,
-a
-)
-f(s,a) over state and action pairs, which yields a vector 
-[
-f
-1
-(
-s
-,
-a
-)
-,
-…
-,
-f
-i
-(
-s
-,
-a
-)
-,
-…
-,
-f
-n
-(
-s
-,
-a
-)
-]
-[f 
-1
-​	
- (s,a),…,f 
-i
-​	
- (s,a),…,f 
-n
-​	
- (s,a)] of feature values. We provide feature functions for you in featureExtractors.py. Feature vectors are util.Counter (like a dictionary) objects containing the non-zero pairs of features and values; all omitted features have value zero.
+### Note
+
+Approximate Q-learning assumes the existence of a feature function $f(s,a)$ over state and action pairs, which yields a vector $\[f_1(s,a), \cdots , f_i(s,a), \cdots , f_n(s,a)\]$ of feature values. We provide feature functions for you in `featureExtractors.py`. Feature vectors are `util.Counter` (like a dictionary) objects containing the non-zero pairs of features and values; all omitted features have value zero.
 
 The approximate Q-function takes the following form:
 
-Q
-(
-s
-,
-a
-)
-=
-∑
-i
-=
-1
-n
-f
-i
-(
-s
-,
-a
-)
-w
-i
-Q(s,a)= 
-i=1
-∑
-n
-​	
- f 
-i
-​	
- (s,a)w 
-i
-​	
+$Q(s,a) = \sum_{i=1}^{n} f_i(s,a)w_i$
  
-where each weight 
-w
-i
-w 
-i
-​	
-  is associated with a particular feature 
-f
-i
-(
-s
-,
-a
-)
-f 
-i
-​	
- (s,a). In your code, you should implement the weight vector as a dictionary mapping features (which the feature extractors will return) to weight values. You will update your weight vectors similarly to how you updated Q-values:
+where each weight $w_i$ is associated with a particular feature $f_i(s,a)$. In your code, you should implement the weight vector as a dictionary mapping features (which the feature extractors will return) to weight values. You will update your weight vectors similarly to how you updated Q-values:
 
-w
-i
-←
-w
-i
-+
-α
-⋅
-difference
-⋅
-f
-i
-(
-s
-,
-a
-)
-w 
-i
-​	
- ←w 
-i
-​	
- +α⋅difference⋅f 
-i
-​	
- (s,a)
-difference
-=
-(
-r
-+
-γ
-max
-⁡
-a
-′
-Q
-(
-s
-′
-,
-a
-′
-)
-)
-−
-Q
-(
-s
-,
-a
-)
-difference=(r+γ 
-a 
-′
- 
-max
-​	
- Q(s 
-′
- ,a 
-′
- ))−Q(s,a)
-Note that the 
-difference
-difference term is the same as in normal Q-learning, and 
-r
-r is the experienced reward.
+$w_i \leftarrow w_i + \alpha \cdot \text{difference} \cdot f_i(s,a)$
 
-By default, ApproximateQAgent uses the IdentityExtractor, which assigns a single feature to every (state,action) pair. With this feature extractor, your approximate Q-learning agent should work identically to PacmanQAgent. You can test this with the following command:
+$\text{difference} = (r + \gamma \max_{a^{\prime}} Q(s^{\prime},a^{\prime}))-Q(s,a)$
+
+
+Note that the difference difference term is the same as in normal Q-learning, and $r$ is the experienced reward.
+
+
+By default, `ApproximateQAgent` uses the `IdentityExtractor`, which assigns a single feature to every `(state,action)` pair. With this feature extractor, your approximate Q-learning agent should work identically to `PacmanQAgent`. You can test this with the following command:
 
 ```sh
 python pacman.py -p ApproximateQAgent -x 2000 -n 2010 -l smallGrid
 ```
 
-Important: ApproximateQAgent is a subclass of QLearningAgent, and it therefore shares several methods like getAction. Make sure that your methods in QLearningAgent call getQValue instead of accessing Q-values directly, so that when you override getQValue in your approximate agent, the new approximate q-values are used to compute actions.
+### Important
+
+`ApproximateQAgent` is a subclass of `QLearningAgent`, and it therefore shares several methods like `getAction`. Make sure that your methods in `QLearningAgent` call `getQValue` instead of accessing Q-values directly, so that when you override `getQValue` in your approximate agent, the new approximate q-values are used to compute actions.
 
 Once you’re confident that your approximate learner works correctly with the identity features, run your approximate Q-learning agent with our custom feature extractor, which can learn to win with ease:
 
@@ -511,7 +359,7 @@ Once you’re confident that your approximate learner works correctly with the i
 python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -l mediumGrid
 ```
 
-Even much larger layouts should be no problem for your ApproximateQAgent (warning: this may take a few minutes to train):
+Even much larger layouts should be no problem for your `ApproximateQAgent` (warning: this may take a few minutes to train):
 
 ```sh
 python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -l mediumClassic
@@ -519,7 +367,9 @@ python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -x 50 -n 60 -
 
 If you have no errors, your approximate Q-learning agent should win almost every time with these simple features, even with only 50 training games.
 
-Grading: We will run your approximate Q-learning agent and check that it learns the same Q-values and feature weights as our reference implementation when each is presented with the same set of examples. To grade your implementation, run the autograder:
+### Grading
+
+We will run your approximate Q-learning agent and check that it learns the same Q-values and feature weights as our reference implementation when each is presented with the same set of examples. To grade your implementation, run the autograder:
 
 ```sh
 python autograder.py -q q6
