@@ -13,7 +13,7 @@ Project 0 will cover the following:
 
 ### Files to Edit and Submit
 
-You will fill in portions of ```addition.py``` , ```buyLotsOfFruit.py``` , and ```shopSmart.py```. Please do not change the other files in this repository or add new files to your repository. Submit autograder results as a pdf via your institutions LMS. The due dates for projects are listed on the syllabus. No late project will be accepted without a starfish notice.
+You will fill in portions of ```addition.py``` , ```buyLotsOfFruit.py``` , and ```shopSmart.py```. Please do not change the other files in this repository or add new files to your repository. Submit a zip file of the files listed under the submission heading. The due dates for projects are listed on the syllabus. No late project will be accepted without a starfish notice.
 
 ### Evaluation
 
@@ -309,6 +309,10 @@ shopSmart.shopSmart(orders2, shops) == shop2
     
 ## Submission
 
-- Submit autograder results as a pdf
+In order to submit your project, run python submission_autograder.py to ensure your code is correct.  After verifying correctness, submit the following files via the standard submit process for this class.
+
+- `addition.py`
+- `buyLotsOfFruit.py`
+- `shopSmart.py`
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
