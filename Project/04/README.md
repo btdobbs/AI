@@ -457,6 +457,27 @@ So far, we have tracked each ghost independently, which works fine for the defau
 The Bayes net has the following structure, where the hidden variables $G$ represent ghost positions and the emission variables $E$ are the noisy distances to each ghost. This structure can be extended to more ghosts, but only two ($a$ and $b$) are shown below.
 
 ```mermaid
+flowchart TD
+    id1-->id5
+    id1-->id6
+    id2-->id5
+    id2-->id6
+    id5-->id9
+    id5-->id10
+    id6-->id9
+    id6-->id10
+    subgraph t-3
+    id9((g-3-a))-->id11((e-3-a))
+    id10((g-3-b))-->id12((e-3-b))
+    end
+    subgraph t-2
+    id5((g-2-a))-->id7((e-2-a))
+    id6((g-2-b))-->id8((e-2-b))
+    end
+    subgraph t-1
+    id1((g-1-a))-->id3((e-1-a))
+    id2((g-1-b))-->id4((e-1-b))
+    end
 ```
 
 You will now implement a particle filter that tracks multiple ghosts simultaneously. Each particle will represent a tuple of ghost positions that is a sample of where all the ghosts are at the present time. The code is already set up to extract marginal distributions about each ghost from the joint inference algorithm you will create, so that belief clouds about individual ghosts can be displayed.
