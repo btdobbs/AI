@@ -136,7 +136,7 @@ flowchart LR
     id1[Ghost 0] --> id2[Obs 0]
     id3[Pacman] --> id2[Obs 0]
     id3[Pacman] --> id4[Obs 1]
-    id1[Ghost 1] --> id4[Obs 1]
+    id5[Ghost 1] --> id4[Obs 1]
 ```
 
 Don’t worry if this looks complicated! We’ll take it step by step. As described in the code for `constructBayesNet`, we build the empty structure by listing all of the variables, their values, and the edges between them. This figure shows the variables and the edges, but what about their domains?
@@ -305,6 +305,17 @@ For the tests in this question we will sometimes use a ghost with random movemen
 The below diagram shows what the Bayes Net/ Hidden Markov model for what is happening. Still, you should rely on the above description for implementation because some parts are implemented for you (i.e. `getPositionDistribution` is abstracted to be $P(G_{t+1} | gameState, G_t)$ ).
 
 ```mermaid
+flowchart TD
+    id1[Pacman t=0] --> id2[Ghost 0 t=0]
+    id1[Pacman t=0] --> id3[Ghost 1 t=0]
+    id1[Pacman t=0] --> id4[Obs 0 t=0]
+    id1[Pacman t=0] --> id5[Obs 1 t=0]
+    id6[Pacman t=1] --> id7[Ghost 0 t=1]
+    id6[Pacman t=1] --> id8[Ghost 1 t=1]
+    id6[Pacman t=1] --> id9[Obs 0 t=1]
+    id6[Pacman t=1] --> id10[Obs 1 t=1]
+    id2[Ghost 0 t=0] --> id7[Ghost 0 t=1]
+    id3[Ghost 1 t=0] --> id8[Ghost 1 t=1]
 ```
 
 To run the autograder for this question and visualize the output:
