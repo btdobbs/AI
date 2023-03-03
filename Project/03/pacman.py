@@ -564,7 +564,7 @@ def readCommand(argv):
 
     # Fix the random seed
     if options.fixRandomSeed:
-        random.seed('cs-ai')
+        random.seed('cs188')
 
     # Choose a layout
     args['layout'] = layout.getLayout(options.layout)
