@@ -310,10 +310,14 @@ flowchart TD
     id1[Pacman t=0] --> id3[Ghost 1 t=0]
     id1[Pacman t=0] --> id4[Obs 0 t=0]
     id1[Pacman t=0] --> id5[Obs 1 t=0]
+    id2[Ghost 0 t=0] --> id4[Obs 0 t=0]
+    id3[Ghost 1 t=0] --> id5[Obs 1 t=0]
     id6[Pacman t=1] --> id7[Ghost 0 t=1]
     id6[Pacman t=1] --> id8[Ghost 1 t=1]
     id6[Pacman t=1] --> id9[Obs 0 t=1]
     id6[Pacman t=1] --> id10[Obs 1 t=1]
+    id7[Ghost 0 t=1] --> id9[Obs 0 t=1]
+    id8[Ghost 1 t=1] --> id10[Obs 1 t=1]
     id2[Ghost 0 t=0] --> id7[Ghost 0 t=1]
     id3[Ghost 1 t=0] --> id8[Ghost 1 t=1]
 ```
@@ -355,6 +359,24 @@ Bayes net diagram
 To run the autograder for this question and visualize the output:
 
 ```mermaid
+flowchart TD
+    id1[Pacman t=0] --> id2[Ghost 0 t=0]
+    id1[Pacman t=0] --> id3[Ghost 1 t=0]
+    id1[Pacman t=0] --> id4[Obs 0 t=0]
+    id1[Pacman t=0] --> id5[Obs 1 t=0]
+    id2[Ghost 0 t=0] --> id4[Obs 0 t=0]
+    id3[Ghost 1 t=0] --> id5[Obs 1 t=0]
+    id6[Pacman t=1] --> id7[Ghost 0 t=1]
+    id6[Pacman t=1] --> id8[Ghost 1 t=1]
+    id6[Pacman t=1] --> id9[Obs 0 t=1]
+    id6[Pacman t=1] --> id10[Obs 1 t=1]
+    id7[Ghost 0 t=1] --> id9[Obs 0 t=1]
+    id8[Ghost 1 t=1] --> id10[Obs 1 t=1]
+    id2[Ghost 0 t=0] --> id7[Ghost 0 t=1]
+    id3[Ghost 1 t=0] --> id8[Ghost 1 t=1]
+    id1[Pacman t=0] --> id6[Pacman t=1]
+    id4[Obs 0 t=0] --> id6[Pacman t=1]
+    id5[Obs 1 t=0] --> id6[Pacman t=1]
 ```
 
 ```sh
