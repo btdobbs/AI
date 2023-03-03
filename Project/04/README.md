@@ -504,7 +504,7 @@ Note that completing this question involves grading both question 13 and questio
 
 As you run the autograder note that `q14/1-JointParticlePredict` and `q14/2-JointParticlePredict` test your `predict` implementations only, and `q14/3-JointParticleFull` tests both your `predict` and `update` implementations. Notice the difference between test 1 and test 3. In both tests, pacman knows that the ghosts will move to the sides of the gameboard. What is different between the tests, and why?
 
-[busters_disperse_inference](https://github.com/btdobbs/AI/blob/main/Project/04/images/busters_disperse_inference.png)
+![busters_disperse_inference](https://github.com/btdobbs/AI/blob/main/Project/04/images/busters_disperse_inference.png)
 
 To run the autograder for this question and visualize the output:
 
