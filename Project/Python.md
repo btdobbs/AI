@@ -8,7 +8,7 @@ The programming assignments in this course will be written in [Python](https://w
 
 We encourage you to type all python shown in the tutorial onto your own machine. Make sure it responds the same way.
 
-You may find the Troubleshooting section helpful if you run into problems. It contains a list of the frequent problems previous CS188 students have encountered when following this tutorial.
+You may find the Troubleshooting section helpful if you run into problems. It contains a list of the frequent problems previous students have encountered when following this tutorial.
 
 # Invoking the Interpreter
 
