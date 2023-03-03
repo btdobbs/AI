@@ -644,7 +644,7 @@ To understand why this is useful to Pacman, consider the following scenario in w
 
 In this question, you will implement the elapseTime method in ExactInference. The elapseTime step should, for this problem, update the belief at every position on the map after one time step elapsing. Your agent has access to the action distribution for the ghost through self.getPositionDistribution. In order to obtain the distribution over new positions for the ghost, given its previous position, use this line of code:
 
-```sh
+```py
 newPosDist = self.getPositionDistribution(gameState, oldPos)
 ```
 
@@ -710,7 +710,7 @@ Implement the chooseAction method in GreedyBustersAgent in bustersAgents.py. You
 
 To find the maze distance between any two positions pos1 and pos2, use self.distancer.getDistance(pos1, pos2). To find the successor position of a position after an action:
 
-```sh
+```py
 successorPosition = Actions.getSuccessor(position, action)
 ```
 
@@ -777,7 +777,7 @@ Note that in this question, we will test both the elapseTime function in isolati
 
 As in the elapseTime method of the ExactInference class, you should use:
 
-```sh
+```py
 newPosDist = self.getPositionDistribution(gameState, oldPos)
 ```
 
