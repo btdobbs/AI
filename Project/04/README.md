@@ -177,7 +177,7 @@ Hints and Observations:
  - `joinFactors` $(P(X∣Y,Z),P(Y))=P(X,Y∣Z)$ 
  - `joinFactors` $(P(V∣W),P(X∣Y),P(Z))=P(V,X,Z∣W,Y)$ 
 - For a general `joinFactors` operation, which variables are unconditioned in the returned `Factor`? Which variables are conditioned?
-- Factor`s store a `variableDomainsDict`, which maps each variable to a list of values that it can take on (its domain). A `Factor` gets its variableDomainsDict from the `BayesNet` from which it was instantiated. As a result, it contains all the variables of the `BayesNet`, not only the unconditioned and conditioned variables used in the `Factor`. For this problem, you may assume that all the input `Factor`s have come from the same `BayesNet`, and so their `variableDomainsDicts` are all the same.
+- `Factor`s store a `variableDomainsDict`, which maps each variable to a list of values that it can take on (its domain). A `Factor` gets its variableDomainsDict from the `BayesNet` from which it was instantiated. As a result, it contains all the variables of the `BayesNet`, not only the unconditioned and conditioned variables used in the `Factor`. For this problem, you may assume that all the input `Factor`s have come from the same `BayesNet`, and so their `variableDomainsDicts` are all the same.
 
 ## Question 3 (2 points): Eliminate (not ghosts yet)
 
