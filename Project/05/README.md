@@ -116,14 +116,42 @@ The input features `x` and the correct label `y` are provided in the form of `nn
 1.9756581717465536
 ```
 
-Finally, here are some formulations of matrix multiplication (you can do some examples by hand to verify this). Let $\bm{A}$ be an 
-$m \times n$ matrix and $\bm{B}$ be $n \times p$; matrix multiplication works as follows:
+Finally, here are some formulations of matrix multiplication (you can do some examples by hand to verify this). Let $\boldsymbol{A}$ be an  $m \times n$ matrix and $\boldsymbol{B}$ be $n \times p$; matrix multiplication works as follows:
 
-$\bm{AB} = $
+$$
+\boldsymbol{AB} = 
+\begin{bmatrix}
+\vec{A}_0^T \\
+\vec{A}_1^T \\
+\vdots \\
+\vec{A}_{m-1}^T \\
+\end{bmatrix}
+\boldsymbol{B} = 
+\begin{bmatrix}
+\vec{A}_0^T \boldsymbol{B} \\
+\vec{A}_1^T \boldsymbol{B} \\
+\vdots \\
+\vec{A}_{m-1}^T \boldsymbol{B} \\
+\end{bmatrix}
+\boldsymbol{AB} = 
+\boldsymbol{A}
+\begin{bmatrix}
+\vec{B}_0 &
+\vec{B}_1  &
+\cdots  &
+\vec{B}_{p-1} 
+\end{bmatrix} = 
+\begin{bmatrix}
+\boldsymbol{A}\vec{B}_0  &
+\boldsymbol{A}\vec{B}_1  &
+\cdots  &
+\boldsymbol{A}\vec{B}_{p-1} 
+\end{bmatrix}
+$$
 
 - As a sanity check, the dimensions are what we expect them to be, and the inner dimension of $n$ is preserved for any remaining matrix multiplications.
 
-- This is useful to see what happens when we multiply a batch matrix $\bm{X}$ by a weight matrix $\bm{W}$, we are just multiplying each sample one at a time by the entire weight matrix via the first formulation. Within each sample times weights, we are just getting different linear combinations of the sample to go to each result column via the second formulation. Note that as long as the dimensiosn match, $\bm{A}$ can be a row vector and $\bm{B}$ a column vector.
+- This is useful to see what happens when we multiply a batch matrix $\boldsymbol{X}$ by a weight matrix $\boldsymbol{W}$, we are just multiplying each sample one at a time by the entire weight matrix via the first formulation. Within each sample times weights, we are just getting different linear combinations of the sample to go to each result column via the second formulation. Note that as long as the dimensiosn match, $\boldsymbol{A}$ can be a row vector and $\boldsymbol{B}$ a column vector.
 
 ## Question 1 (6 points): Perceptron
 
@@ -547,17 +575,15 @@ y=7x
 ​	
  +3. In batched form, our data is:
 
-X
-=
-[
-0
-0
-0
-1
-1
-0
-1
-1
+$$
+\boldsymbol{AB} = 
+\begin{bmatrix}
+0 & 0\\
+0 & 1\\
+1 & 0\\
+1 & 1\\
+\end{bmatrix}
+$$
  
 ]
 Y
