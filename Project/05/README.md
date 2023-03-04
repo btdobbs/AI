@@ -10,22 +10,22 @@ The code for this project contains the following files, available in this reposi
 
 |                             |                                                                     |
 | --------------------------- | ------------------------------------------------------------------- |
-models.py	Perceptron and neural network models for a variety of applications.
+| models.py                   |	Perceptron and neural network models for a variety of applications. |
 
 ### Files you might want to review
 
 |                                        |                                   |
 | -------------------------------------- | --------------------------------- |
-nn.py	Neural network mini-library.
+| nn.py                                  |	Neural network mini-library.     |
 
 ### Supporting files you can ignore
 
 |                                         |                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------- |
-autograder.py	Project autograder.
-backend.py	Backend code for various machine learning tasks.
-data	Datasets for digit classification and language identification.
-submission_autograder.py	Submission autograder (generates tokens for submission).
+| autograder.py                           |	Project autograder.                                                                     |
+| backend.py                              |	Backend code for various machine learning tasks.                                        |
+| data                                    |	Datasets for digit classification and language identification.                          |
+| submission_autograder.py                |	Submission autograder (generates tokens for submission).                                |
 
 ### Files to Edit and Submit
 
@@ -49,7 +49,7 @@ Please be careful not to post spoilers.
 
 ## Installation
 
-If the following runs and you see the below window pop up where a line segment spins in a circle, you can skip this section. You should use the conda environment for this since conda comes with the libraries we need.
+If the following runs, you will see a below window pop up where a line segment spins in a circle and you can skip this section. You should use the conda environment for this since conda comes with the libraries we need.
 
 ```sh
 python autograder.py --check-dependencies
