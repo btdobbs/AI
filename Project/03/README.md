@@ -111,7 +111,9 @@ As in Pacman, positions are represented by `(x, y)` Cartesian coordinates and an
 
 Recall the value iteration state update equation:
 
-$V_{k+1}(s) \leftarrow \max_{a} \sum_{s^{\prime}} T(s,a,s^{\prime})\[R(s,a,s^{\prime})+ \gamma V_k(s^{\prime})\]$
+$$
+V_{k+1}(s) \leftarrow \max_{a} \sum_{s^{\prime}} T(s,a,s^{\prime})\[R(s,a,s^{\prime})+ \gamma V_k(s^{\prime})\]
+$$
 
 Write a value iteration agent in `ValueIterationAgent`, which has been partially specified for you in `valueIterationAgents.py`. Your value iteration agent is an offline planner, not a reinforcement learning agent, and so the relevant training option is the number of iterations of value iteration it should run (option `-i`) in its initial planning phase. `ValueIterationAgent` takes an MDP on construction and runs value iteration for the specified number of iterations before the constructor returns.
 
@@ -333,13 +335,17 @@ Approximate Q-learning assumes the existence of a feature function $f(s,a)$ over
 
 The approximate Q-function takes the following form:
 
-$Q(s,a) = \sum_{i=1}^{n} f_i(s,a)w_i$
+$$
+Q(s,a) = \sum_{i=1}^{n} f_i(s,a)w_i
+$$
  
 where each weight $w_i$ is associated with a particular feature $f_i(s,a)$. In your code, you should implement the weight vector as a dictionary mapping features (which the feature extractors will return) to weight values. You will update your weight vectors similarly to how you updated Q-values:
 
 $w_i \leftarrow w_i + \alpha \cdot \text{difference} \cdot f_i(s,a)$
 
-$\text{difference} = (r + \gamma \max_{a^{\prime}} Q(s^{\prime},a^{\prime}))-Q(s,a)$
+$$
+\text{difference} = (r + \gamma \max_{a^{\prime}} Q(s^{\prime},a^{\prime}))-Q(s,a)
+$$
 
 
 Note that the difference difference term is the same as in normal Q-learning, and $r$ is the experienced reward.
