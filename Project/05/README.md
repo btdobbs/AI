@@ -273,164 +273,50 @@ The datasets provided also have two additional methods:
 
 ## Example: Linear Regression
 
-As an example of how the neural network framework works, let’s fit a line to a set of data points. We’ll start four points of training data constructed using the function 
-y
-=
-7
-x
-0
-+
-8
-x
-1
-+
-3
-y=7x 
-0
-​	
- +8x 
-1
-​	
- +3. In batched form, our data is:
+As an example of how the neural network framework works, let’s fit a line to a set of data points. We’ll start four points of training data constructed using the function $y = 7x_0 + 8x_1 + 3$. In batched form, our data is:
 
 $$
-\boldsymbol{AB} = 
+\boldsymbol{X} = 
 \begin{bmatrix}
 0 & 0\\
 0 & 1\\
 1 & 0\\
 1 & 1\\
 \end{bmatrix}
+\boldsymbol{Y} = 
+\begin{bmatrix}
+3\\
+11\\
+10\\
+18\\
+\end{bmatrix}
 $$
  
-]
-Y
-=
-[
-3
-11
-10
-18
- 
-]
-X= 
-​	
-  
-0
-0
-1
-1
-​	
-  
-0
-1
-0
-1
-​	
-  
-​	
- Y= 
-​	
-  
-3
-11
-10
-18
-​	
-  
-​	
- 
-Suppose the data is provided to us in the form of nn.Constant nodes:
+Suppose the data is provided to us in the form of `nn.Constant` nodes:
 
+``sh
 >>> x
 <Constant shape=4x2 at 0x10a30fe80>
 >>> y
 <Constant shape=4x1 at 0x10a30fef0>
-Copy
-Let’s construct and train a model of the form 
-f
-(
-x
-)
-=
-x
-0
-⋅
-m
-0
-+
-x
-1
-⋅
-m
-1
-+
-b
-f(x)=x 
-0
-​	
- ⋅m 
-0
-​	
- +x 
-1
-​	
- ⋅m 
-1
-​	
- +b. If done correctly, we should be able to learn that 
-m
-0
-=
-7
-m 
-0
-​	
- =7, 
-m
-1
-=
-8
-m 
-1
-​	
- =8, and 
-b
-=
-3
-b=3.
+``
+
+Let’s construct and train a model of the form $f(\boldsymbol{x}) = x_0 \cdot m_0 + x_1 \cdot m_1 + b$. If done correctly, we should be able to learn that $m_0 = 7, m_1 = 8, and b = 3$.
 
 First, we create our trainable parameters. In matrix form, these are:
 
-M
-=
-[
-m
-0
-m
-1
- 
-]
-B
-=
-[
+$$
+\boldsymbol{M} = 
+\begin{bmatrix}
+m_0\\
+m_1\\
+\end{bmatrix}
+\boldsymbol{B} = 
+\begin{bmatrix}
 b
- 
-]
-M=[ 
-m 
-0
-​	
- 
-m 
-1
-​	
- 
-​	
- ]B=[ 
-b
-​	
- ]
+\end{bmatrix}
+$$
+
 Which corresponds to the following code:
 
 ```py
@@ -447,49 +333,18 @@ Printing them gives:
 <Parameter shape=1x1 at 0x112b8beb8>
 ```
 
-Next, we compute our model’s predictions for 
-y
-y:
+Next, we compute our model’s predictions for $y$:
 
 ```py
 xm = nn.Linear(x, m)
 predicted_y = nn.AddBias(xm, b)
 ```
 
-Our goal is to have the predicted 
-y
-y-values match the provided data. In linear regression we do this by minimizing the square loss:
+Our goal is to have the predicted $y$-values match the provided data. In linear regression we do this by minimizing the square loss:
 
-L
-=
-1
-2
-N
-∑
-(
-x
-,
-y
-)
-(
-y
-−
-f
-(
-x
-)
-)
-2
-L= 
-2N
-1
-​	
-  
-(x,y)
-∑
-​	
- (y−f(x)) 
-2
+$$
+\mathcal{L} = \frac{1}{2N} \sum_{(x,y)} (y-f(\boldsymbol{x}))^2
+$$
  
 We construct a loss node:
 
@@ -518,49 +373,37 @@ Printing the nodes used gives:
 <Constant shape=1x1 at 0x11a8cb588>
 ```
 
-We can then use the update method to update our parameters. Here is an update for m, assuming we have already initialized a multiplier variable based on a suitable learning rate of our choosing:
+We can then use the `update` method to update our parameters. Here is an update for `m`, assuming we have already initialized a `multiplier` variable based on a suitable learning rate of our choosing:
 
 ```py
 m.update(grad_wrt_m, multiplier)
 ```
 
-If we also include an update for b and add a loop to repeatedly perform gradient updates, we will have the full training procedure for linear regression.
+If we also include an update for `b` and add a loop to repeatedly perform gradient updates, we will have the full training procedure for linear regression.
 
 ## Question 2 (6 points): Non-linear Regression
 
-For this question, you will train a neural network to approximate 
-sin
-⁡
-(
-x
-)
-sin(x) over 
-[
-−
-2
-π
-,
-2
-π
-]
-[−2π,2π].
+For this question, you will train a neural network to approximate $\sin(x)$ over $\[-2 \pi, 2 \pi\]$.
 
-You will need to complete the implementation of the RegressionModel class in models.py. For this problem, a relatively simple architecture should suffice (see Neural Network Tips for architecture tips). Use nn.SquareLoss as your loss.
+You will need to complete the implementation of the `RegressionModel` class in `models.py`. For this problem, a relatively simple architecture should suffice (see Neural Network Tips for architecture tips). Use `nn.SquareLoss` as your loss.
 
 Your tasks are to:
 
-Implement RegressionModel.__init__ with any needed initialization.
-Implement RegressionModel.run to return a batch_size by 1 node that represents your model’s prediction.
-Implement RegressionModel.get_loss to return a loss for given inputs and target outputs.
-Implement RegressionModel.train, which should train your model using gradient-based updates.
-There is only a single dataset split for this task (i.e., there is only training data and no validation data or test set). Your implementation will receive full points if it gets a loss of 0.02 or better, averaged across all examples in the dataset. You may use the training loss to determine when to stop training (use nn.as_scalar to convert a loss node to a Python number). Note that it should take the model a few minutes to train.
+- Implement `RegressionModel.__init__` with any needed initialization.
+- Implement `RegressionModel.run` to return a `batch_size` by `1` node that represents your model’s prediction.
+- Implement `RegressionModel.get_loss` to return a loss for given inputs and target outputs.
+- Implement `RegressionModel.train`, which should train your model using gradient-based updates.
 
-Suggested network architecture (added 2022/11/28): Normally, you would need to use trial-and-error to find working hyperparameters. Below is a set of hyperparameters that worked for us (took less than a minute to train on the hive machines), but feel free to experiment and use your own.
+There is only a single dataset split for this task (i.e., there is only training data and no validation data or test set). Your implementation will receive full points if it gets a loss of 0.02 or better, averaged across all examples in the dataset. You may use the training loss to determine when to stop training (use `nn.as_scalar` to convert a loss node to a Python number). Note that it should take the model a few minutes to train.
 
-Hidden layer size 512
-Batch size 200
-Learning rate 0.05
-One hidden layer (2 linear layers in total)
+### Suggested network architecture
+
+Normally, you would need to use trial-and-error to find working hyperparameters. Below is a set of hyperparameters that worked for us (took less than a minute to train on the hive machines), but feel free to experiment and use your own.
+
+- Hidden layer size 512
+- Batch size 200
+- Learning rate 0.05
+- One hidden layer (2 linear layers in total)
 
 ```sh
 python autograder.py -q q2
@@ -570,20 +413,23 @@ python autograder.py -q q2
 
 For this question, you will train a network to classify handwritten digits from the MNIST dataset.
 
-Each digit is of size 28 by 28 pixels, the values of which are stored in a 784-dimensional vector of floating point numbers. Each output we provide is a 10-dimensional vector which has zeros in all positions, except for a one in the position corresponding to the correct class of the digit.
+Each digit is of size `28` by `28` pixels, the values of which are stored in a `784`-dimensional vector of floating point numbers. Each output we provide is a `10`-dimensional vector which has zeros in all positions, except for a one in the position corresponding to the correct class of the digit.
 
-Complete the implementation of the DigitClassificationModel class in models.py. The return value from DigitClassificationModel.run() should be a batch_size by 10 node containing scores, where higher scores indicate a higher probability of a digit belonging to a particular class (0-9). You should use nn.SoftmaxLoss as your loss. Do not put a ReLU activation in the last linear layer of the network.
+Complete the implementation of the `DigitClassificationModel` class in `models.py`. The return value from `DigitClassificationModel.run()` should be a `batch_size` by `10` node containing scores, where higher scores indicate a higher probability of a digit belonging to a particular class (0-9). You should use `nn.SoftmaxLoss` as your loss. Do not put a ReLU activation in the last linear layer of the network.
 
-For both this question and Q4, in addition to training data, there is also validation data and a test set. You can use dataset.get_validation_accuracy() to compute validation accuracy for your model, which can be useful when deciding whether to stop training. The test set will be used by the autograder.
+For both this question and Q4, in addition to training data, there is also validation data and a test set. You can use `dataset.get_validation_accuracy()` to compute validation accuracy for your model, which can be useful when deciding whether to stop training. The test set will be used by the autograder.
 
 To receive points for this question, your model should achieve an accuracy of at least 97% on the test set. For reference, our staff implementation consistently achieves an accuracy of 98% on the validation data after training for around 5 epochs. Note that the test grades you on test accuracy, while you only have access to validation accuracy – so if your validation accuracy meets the 97% threshold, you may still fail the test if your test accuracy does not meet the threshold. Therefore, it may help to set a slightly higher stopping threshold on validation accuracy, such as 97.5% or 98%.
 
-Suggested network architecture (added 2022/11/28): Normally, you would need to use trial-and-error to find working hyperparameters. Below is a set of hyperparameters that worked for us (took less than a minute to train on the hive machines), but feel free to experiment and use your own.
+### Suggested network architecture
 
-Hidden layer size 200
-Batch size 100
-Learning rate 0.5
-One hidden layer (2 linear layers in total)
+Normally, you would need to use trial-and-error to find working hyperparameters. Below is a set of hyperparameters that worked for us (took less than a minute to train on the hive machines), but feel free to experiment and use your own.
+
+- Hidden layer size 200
+- Batch size 100
+- Learning rate 0.5
+- One hidden layer (2 linear layers in total)
+
 To test your implementation, run the autograder:
 
 ```sh
@@ -598,358 +444,66 @@ Language identification is the task of figuring out, given a piece of text, what
 
 In this project, we’re going to build a smaller neural network model that identifies language for one word at a time. Our dataset consists of words in five languages, such as the table below:
 
-Word	Language
-discussed	English
-eternidad	Spanish
-itseänne	Finnish
-paleis	Dutch
-mieszkać	Polish
-Different words consist of different numbers of letters, so our model needs to have an architecture that can handle variable-length inputs. Instead of a single input 
-x
-x (like in the previous questions), we’ll have a separate input for each character in the word: 
-x
-0
-,
-x
-1
-,
-⋯
-,
-x
-L
-−
-1
-x 
-0
-​	
- ,x 
-1
-​	
- ,⋯,x 
-L−1
-​	
-  where 
-L
-L is the length of the word. We’ll start by applying a network 
-f
-initial
-f 
-initial
-​	
- that is just like the networks in the previous problems. It accepts its input 
-x
-0
-x 
-0
-​	
-  and computes an output vector 
-h
-1
-h 
-1
-​	
-  of dimensionality 
-d
-d:
+| Word      | Language |
+| --------- | -------- |
+| discussed | English  |
+| eternidad | Spanish  |
+| itseänne  | Finnish  |
+| paleis    | Dutch    |
+| mieszkać  | Polish   |
 
-h
-1
-=
-f
-initial
-(
-x
-0
-)
-h 
-1
-​	
- =f 
-initial
-​	
- (x 
-0
-​	
- )
-Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state 
-h
-1
-h 
-1
-​	
- . We denote this sub-network as 
-f
-f.
+Different words consist of different numbers of letters, so our model needs to have an architecture that can handle variable-length inputs. Instead of a single input $x$ (like in the previous questions), we’ll have a separate input for each character in the word: $x_0, x_1, \cdots ,x_{L-1}$	where $L$ is the length of the word. We’ll start by applying a network $f_{\text{initial}}$ that is just like the networks in the previous problems. It accepts its input $x_0$ and computes an output vector $h_1$ of dimensionality $d$:
 
-h
-2
-=
-f
-(
-h
-1
-,
-x
-1
-)
-h 
-2
-​	
- =f(h 
-1
-​	
- ,x 
-1
-​	
- )
+$h_1 = f_{\text{initial}}(x_0)$
+ 
+Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state $h_1$. We denote this sub-network as $f$.
+
+$h_2 = f(h_1,x_1)$
+
 This pattern continues for all letters in the input word, where the hidden state at each step summarizes all the letters the network has processed thus far:
 
-h
-3
-=
-f
-(
-h
-2
-,
-x
-2
-)
-h 
-3
-​	
- =f(h 
-2
-​	
- ,x 
-2
-​	
- )
-⋮
-Throughout these computations, the function 
-f
-(
-⋅
-,
-⋅
-)
-f(⋅,⋅) is the same piece of neural network and uses the same trainable parameters; 
-f
-initial
-f 
-initial
-​	
-  will also share some of the same parameters as 
-f
-(
-⋅
-,
-⋅
-)
-f(⋅,⋅). In this way, the parameters used when processing words of different length are all shared. You can implement this using a for loop over the provided inputs xs, where each iteration of the loop computes either 
-f
-initial
-f 
-initial
-​	
-  or 
-f
-f.
+$$
+h_3 = f(h_2,x_2)
+\vdots
+$$
+
+
+Throughout these computations, the function $f(\cdot,\cdot)$ is the same piece of neural network and uses the same trainable parameters; 
+$f_{\text{initial}}$ will also share some of the same parameters as $f(\cdot,\cdot)$. In this way, the parameters used when processing words of different length are all shared. You can implement this using a for loop over the provided inputs `xs`, where each iteration of the loop computes either $f_{\text{initial}}$ or $f$.
 
 The technique described above is called a Recurrent Neural Network (RNN). A schematic diagram of the RNN is shown below:
 
+```mermaid
+flowchart LR
+    id1[f_i] -- h_1 --> id2[f]
+    id2[f] -- h_2 --> id3[f]
+    id3[f] -- h_3 --> id4[...]
+    id5((c)) -- x_0 --> id1[f_i]
+    id6((a)) -- x_1 --> id2[f]
+    id7((t)) -- x_2 --> id3[f]
+```
 
+Here, an RNN is used to encode the word “cat” into a fixed-size vector $h_3$.
 
-Here, an RNN is used to encode the word “cat” into a fixed-size vector 
-h
-3
-h 
-3
-​	
- .
+After the RNN has processed the full length of the input, it has encoded the arbitrary-length input word into a fixed-size vector $h_L$, where $L$ is the length of the word. This vector summary of the input word can now be fed through additional output transformation layers to generate classification scores for the word’s language identity.
 
-After the RNN has processed the full length of the input, it has encoded the arbitrary-length input word into a fixed-size vector 
-h
-L
-h 
-L
-​	
- , where 
-L
-L is the length of the word. This vector summary of the input word can now be fed through additional output transformation layers to generate classification scores for the word’s language identity.
+### Batching
 
-Batching
-Although the above equations are in terms of a single word, in practice you must use batches of words for efficiency. For simplicity, our code in the project ensures that all words within a single batch have the same length. In batched form, a hidden state 
-h
-i
-h 
-i
-​	
-  is replaced with the matrix 
-H
-i
-H 
-i
-​	
-  of dimensionality batch_size by d.
+Although the above equations are in terms of a single word, in practice you must use batches of words for efficiency. For simplicity, our code in the project ensures that all words within a single batch have the same length. In batched form, a hidden state $h_i$ is replaced with the matrix $H_i$ of dimensionality `batch_size` by `d`.
 
-Design Tips
-The design of the recurrent function 
-f
-(
-⋅
-,
-⋅
-)
-f(⋅,⋅) is the primary challenge for this task. Here are some tips:
+## Design Tips
 
-Start with an architecture 
-f
-initial
-(
-x
-)
-f 
-initial
-​	
- (x) of your choice similar to the previous questions, as long as it has at least one non-linearity.
-You should use the following method of constructing 
-f
-(
-⋅
-,
-⋅
-)
-f(⋅,⋅) given 
-f
-initial
-(
-x
-)
-f 
-initial
-​	
- (x). The first transformation layer of 
-f
-initial
-f 
-initial
-​	
-  will begin by multiplying the vector 
-x
-0
-x 
-0
-​	
-  by some weight matrix 
-W
-x
-W 
-x
-​	
-  to produce 
-z
-0
-=
-x
-0
-⋅
-W
-x
-z 
-0
-​	
- =x 
-0
-​	
- ⋅W 
-x
-​	
- . For subsequent letters, you should replace this computation with 
-z
-i
-=
-x
-i
-⋅
-W
-x
-+
-h
-i
-⋅
-W
-hidden
-z 
-i
-​	
- =x 
-i
-​	
- ⋅W 
-x
-​	
- +h 
-i
-​	
- ⋅W 
-hidden
-​	
-  using an nn.Add operation. In other words, you should replace a computation of the form z0 = nn.Linear(x, W) with a computation of the form z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden)).
-If done correctly, the resulting function 
-f
-(
-x
-i
-,
-h
-i
-)
-=
-g
-(
-z
-i
-)
-=
-g
-(
-z
-x
-i
-,
-h
-i
-)
-f(x 
-i
-​	
- ,h 
-i
-​	
- )=g(z 
-i
-​	
- )=g(z 
-x 
-i
-​	
- ,h 
-i
-​	
- 
-​	
- ) will be non-linear in both 
-x
-x and 
-h
-h.
-The hidden size d should be sufficiently large.
-Start with a shallow network for 
-f
-f, and figure out good values for the hidden size and learning rate before you make the network deeper. If you start with a deep network right away you will have exponentially more hyperparameter combinations, and getting any single hyperparameter wrong can cause your performance to suffer dramatically.
-Your task
-Complete the implementation of the LanguageIDModel class.
+The design of the recurrent function $f(\cdot,\cdot)$ is the primary challenge for this task. Here are some tips:
+
+- Start with an architecture $f_{\text{initial}}(x)$ of your choice similar to the previous questions, as long as it has at least one non-linearity.
+- You should use the following method of constructing $f(\cdot,\cdot)$ given $f_{\text{initial}}(x)$. The first transformation layer of $f_{\text{initial}}$ will begin by multiplying the vector $x_0$ by some weight matrix $\boldsymbol{W_x}$ to produce $z_0 = x_0 \cdot \boldsymbol{W_x}$. For subsequent letters, you should replace this computation with $z_i = x_i \cdot \boldsymbol{W_x} + h_i \cdot \boldsymbol{W_{hidden}} using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`.
+- If done correctly, the resulting function $f(x_i,h_i) = g(z_i) = g(z_x_i,h_i)$ will be non-linear in both $x$ and $h$.
+- The hidden size `d` should be sufficiently large.
+- Start with a shallow network for $f$, and figure out good values for the hidden size and learning rate before you make the network deeper. If you start with a deep network right away you will have exponentially more hyperparameter combinations, and getting any single hyperparameter wrong can cause your performance to suffer dramatically.
+
+### Your task
+
+Complete the implementation of the `LanguageIDModel` class.
 
 To receive full points on this problem, your architecture should be able to achieve an accuracy of at least 81% on the test set.
 
@@ -959,7 +513,9 @@ To test your implementation, run the autograder:
 python autograder.py -q q4
 ```
 
-Disclaimer: This dataset was generated using automated text processing. It may contain errors. It has also not been filtered for profanity. However, our reference implementation can still correctly classify over 89% of the validation set despite the limitations of the data. Our reference implementation takes 10-20 epochs to train.
+### Disclaimer
+
+This dataset was generated using automated text processing. It may contain errors. It has also not been filtered for profanity. However, our reference implementation can still correctly classify over 89% of the validation set despite the limitations of the data. Our reference implementation takes 10-20 epochs to train.
 
 ## Submission
 
