@@ -57,8 +57,9 @@ python autograder.py --check-dependencies
 
 For this project, you will need to install the following two libraries:
 
-numpy, which provides support for fast, large multi-dimensional arrays.
-matplotlib, a 2D plotting library.
+- [numpy](https://numpy.org/), which provides support for fast, large multi-dimensional arrays.
+- [matplotlib](https://matplotlib.org/), a 2D plotting library.
+- 
 If you have a conda environment, you can install both packages on the command line by running:
 
 conda activate [your environment name]
@@ -70,7 +71,7 @@ pip install matplotlib
 
 You will not be using these libraries directly, but they are required in order to run the provided code and autograder.
 
-If your setup is different, you can refer to numpy and matplotlib installation instructions. You can use either pip or conda to install the packages; pip works both inside and outside of conda environments.
+If your setup is different, you can refer to numpy and matplotlib installation instructions. You can use either `pip` or `conda` to install the packages; `pip` works both inside and outside of conda environments.
 
 After installing, try the dependency check.
 
