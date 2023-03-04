@@ -198,25 +198,25 @@ Throughout the applications portion of the project, you’ll use the framework p
 
 $f(x) = \text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1) \cdot \boldsymbol{W_2} + \boldsymbol{b}_2$
  
-where we have parameter matrices \boldsymbol{W_1} and \boldsymbol{W_2} and parameter vectors \vec{b}_1 and \vec{b}_2 to learn during gradient descent.   \boldsymbol{W_1} will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $\vec{x}, and $h$ is the hidden layer size. $\vec{b}_1$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
+where we have parameter matrices $\boldsymbol{W_1}$ and $\boldsymbol{W_2}$ and parameter vectors $\vec{b}_1$ and $\vec{b}_2$ to learn during gradient descent.   $\boldsymbol{W_1}$ will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $\vec{x}$, and $h$ is the hidden layer size. $\vec{b}_1$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
-$\hat{y}=f(x) = \text{relu}(\text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1) \cdot \boldsymbol{W_2} + \boldsymbol{b}_2) \cdot \boldsymbol{W_3} + \boldsymbol{b}_3$
+$\boldsymbol{\hat{y}}=f(\boldsymbol{x}) = \text{relu}(\text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1) \cdot \boldsymbol{W_2} + \boldsymbol{b}_2) \cdot \boldsymbol{W_3} + \boldsymbol{b}_3$
  
 Or, we can decompose the above and explicitly note the 2 hidden layers:
 
-$h_1 = f_1(x) = \text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1)$
+$\boldsymbol{h_1} = f_1(x) = \text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1)$
 
-$h_2 = f_2(\boldsymbol{h_1}) = \text{relu}(\boldsymbol{\boldsymbol{h_1}} \cdot \boldsymbol{W21} + \boldsymbol{b}_2)$
+$\boldsymbol{h_2} = f_2(\boldsymbol{h_1}) = \text{relu}(\boldsymbol{\boldsymbol{h_1}} \cdot \boldsymbol{W21} + \boldsymbol{b}_2)$
 
-$\hat{y} = f_3(\boldsymbol{h_2}) = \boldsymbol{h_2} + \boldsymbol{W_1} + \boldsymbol{b}_3$
+$\boldsymbol{\hat{y}} = f_3(\boldsymbol{h_2}) = \boldsymbol{h_2} + \boldsymbol{W_1} + \boldsymbol{b}_3$
  
 Note that we don’t have a relu at the end because we want to be able to output negative numbers, and because the point of having relu in the first place is to have non-linear transformations, and having the output be an affine linear transformation of some non-linear intermediate can be very sensible.
 
 ### Batching
 
-For efficiency, you will be required to process whole batches of data at once rather than a single example at a time. This means that instead of a single input row vector \boldsymbol{x} with size $i$, you will be presented with a batch of $b$ inputs represented as a $b \times i$ matrix $\boldsymbol{X}$. We provide an example for linear regression to demonstrate how a linear layer can be implemented in the batched setting.
+For efficiency, you will be required to process whole batches of data at once rather than a single example at a time. This means that instead of a single input row vector $\vec{x}$ with size $i$, you will be presented with a batch of $b$ inputs represented as a $b \times i$ matrix $\boldsymbol{X}$. We provide an example for linear regression to demonstrate how a linear layer can be implemented in the batched setting.
 
 ### Randomness
 
