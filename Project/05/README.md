@@ -155,29 +155,24 @@ $$
 
 ## Question 1 (6 points): Perceptron
 
-Before starting this part, be sure you have numpy and matplotlib installed!
+Before starting this part, be sure you have `numpy` and `matplotlib` installed!
 
-In this part, you will implement a binary perceptron. Your task will be to complete the implementation of the PerceptronModel class in models.py.
+In this part, you will implement a binary perceptron. Your task will be to complete the implementation of the `PerceptronModel` class in `models.py`.
 
-For the perceptron, the output labels will be either 1 or −1, meaning that data points (x, y) from the dataset will have y be a nn.Constant node that contains either 1 or −1 as its entries.
+For the perceptron, the output labels will be either `1` or `−1`, meaning that data points `(x, y)` from the dataset will have y be a `nn.Constant` node that contains either `1` or `−1` as its entries.
 
-We have already initialized the perceptron weights self.w to be a 1 by dimensions parameter node. The provided code will include a bias feature inside x when needed, so you will not need a separate parameter for the bias.
+We have already initialized the perceptron weights `self.w` to be a 1 by `dimensions` parameter node. The provided code will include a bias feature inside `x` when needed, so you will not need a separate parameter for the bias.
 
 Your tasks are to:
 
-Implement the run(self, x) method. This should compute the dot product of the stored weight vector and the given input, returning an nn.DotProduct object.
-Implement get_prediction(self, x), which should return 1 if the dot product is non-negative or −1 otherwise. You should use nn.as_scalar to convert a scalar Node into a Python floating-point number.
-Write the train(self) method. This should repeatedly loop over the data set and make updates on examples that are misclassified. Use the update method of the nn.Parameter class to update the weights. When an entire pass over the data set is completed without making any mistakes, 100% training accuracy has been achieved, and training can terminate.
-In this project, the only way to change the value of a parameter is by calling parameter.update(direction, multiplier), which will perform the update to the weights:
-weights
-←
-weights
-+
-direction
-⋅
-multiplier
-weights←weights+direction⋅multiplier
-The direction argument is a Node with the same shape as the parameter, and the multiplier argument is a Python scalar. Additionally, use iterate_once to loop over the dataset; see Provided Code (Part I) for usage.
+- Implement the `run(self, x)` method. This should compute the dot product of the stored weight vector and the given input, returning an `nn.DotProduct` object.
+- Implement `get_prediction(self, x)`, which should return `1` if the dot product is non-negative or `−1` otherwise. You should use `nn.as_scalar` to convert a scalar `Node` into a Python floating-point number.
+- Write the `train(self)` method. This should repeatedly loop over the data set and make updates on examples that are misclassified. Use the update method of the `nn.Parameter` class to update the weights. When an entire pass over the data set is completed without making any mistakes, 100% training accuracy has been achieved, and training can terminate.
+- In this project, the only way to change the value of a parameter is by calling `parameter.update(direction, multiplier)`, which will perform the update to the weights:
+
+    $\text{weights} \leftarrow \text{weights} + \text{direction} \cdot \text{multiplier}$
+
+The `direction` argument is a `Node` with the same shape as the parameter, and the `multiplier` argument is a Python scalar. Additionally, use `iterate_once` to loop over the dataset; see Provided Code (Part I) for usage.
 
 To test your implementation, run the autograder:
 
@@ -185,329 +180,63 @@ To test your implementation, run the autograder:
 python autograder.py -q q1
 ```
 
-Note: the autograder should take at most 20 seconds or so to run for a correct implementation. If the autograder is taking forever to run, your code probably has a bug.
+### Note
+
+The autograder should take at most 20 seconds or so to run for a correct implementation. If the autograder is taking forever to run, your code probably has a bug.
 
 ## Neural Network Tips
 
 In the remaining parts of the project, you will implement the following models:
 
-Q2: Non-linear Regression
-Q3: Handwritten Digit Classification
-Q4: Language Identification
+- Q2: Non-linear Regression
+- Q3: Handwritten Digit Classification
+- Q4: Language Identification
 
-Building Neural Nets
-Throughout the applications portion of the project, you’ll use the framework provided in nn.py to create neural networks to solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a non-linearity, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as 
-relu
-(
-x
-)
-=
-max
-⁡
-(
-x
-,
-0
-)
-relu(x)=max(x,0). For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector 
-x
-x to an output vector 
-f
-(
-x
-)
-f(x) would be given by the function:
+### Building Neural Nets
 
-f
-(
-x
-)
-=
-relu
-(
-x
-⋅
-W
-1
-+
-b
-1
-)
-⋅
-W
-2
-+
-b
-2
-f(x)=relu(x⋅W 
-1
-​	
- +b 
-1
-​	
- )⋅W 
-2
-​	
- +b 
-2
-​	
+Throughout the applications portion of the project, you’ll use the framework provided in `nn.py` to create neural networks to solve a variety of machine learning problems. A simple neural network has linear layers, where each linear layer performs a linear operation (just like perceptron). Linear layers are separated by a non-linearity, which allows the network to approximate general functions. We’ll use the ReLU operation for our non-linearity, defined as $\text{relu} = \max(x,0)$. For example, a simple one hidden layer/ two linear layers neural network for mapping an input row vector $x$ to an output vector $f(x)$ would be given by the function:
+
+$f(x) = \text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1) \cdot \boldsymbol{W_2} + \boldsymbol{b}_2$
  
-where we have parameter matrices 
-W
-1
-W 
-1
-​	
-  and 
-W
-2
-W 
-2
-​	
-  and parameter vectors 
-b
-1
-b 
-1
-​	
-  and 
-b
-2
-b 
-2
-​	
-  to learn during gradient descent. 
-W
-1
-W 
-1
-​	
-  will be an 
-i
-×
-h
-i×h matrix, where 
-i
-i is the dimension of our input vectors 
-x
-x, and 
-h
-h is the hidden layer size. 
-b
-1
-b 
-1
-​	
-  will be a size 
-h
-h vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
+where we have parameter matrices \boldsymbol{W_1} and \boldsymbol{W_2} and parameter vectors \vec{b}_1 and \vec{b}_2 to learn during gradient descent.   \boldsymbol{W_1} will be an $i \times h$ matrix, where $i$ is the dimension of our input vectors $\vec{x}, and $h$ is the hidden layer size. $\vec{b}_1$ will be a size $h$ vector. We are free to choose any value we want for the hidden size (we will just need to make sure the dimensions of the other matrices and vectors agree so that we can perform the operations). Using a larger hidden size will usually make the network more powerful (able to fit more training data), but can make the network harder to train (since it adds more parameters to all the matrices and vectors we need to learn), or can lead to overfitting on the training data.
 
 We can also create deeper networks by adding more layers, for example a three-linear-layer net:
 
-y
-^
-=
-f
-(
-x
-)
-=
-relu
-(
-relu
-(
-x
-⋅
-W
-1
-+
-b
-1
-)
-⋅
-W
-2
-+
-b
-2
-)
-⋅
-W
-3
-+
-b
-3
-y
-^
-​	
- =f(x)=relu(relu(x⋅W 
-1
-​	
- +b 
-1
-​	
- )⋅W 
-2
-​	
- +b 
-2
-​	
- )⋅W 
-3
-​	
- +b 
-3
-​	
+$\hat{y}=f(x) = \text{relu}(\text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1) \cdot \boldsymbol{W_2} + \boldsymbol{b}_2) \cdot \boldsymbol{W_3} + \boldsymbol{b}_3$
  
 Or, we can decompose the above and explicitly note the 2 hidden layers:
 
-h
-1
-=
-f
-1
-(
-x
-)
-=
-relu
-(
-x
-⋅
-W
-1
-+
-b
-1
-)
-h 
-1
-​	
- =f 
-1
-​	
- (x)=relu(x⋅W 
-1
-​	
- +b 
-1
-​	
- )
-h
-2
-=
-f
-2
-(
-h
-1
-)
-=
-relu
-(
-h
-1
-⋅
-W
-2
-+
-b
-2
-)
-h 
-2
-​	
- =f 
-2
-​	
- (h 
-1
-​	
- )=relu(h 
-1
-​	
- ⋅W 
-2
-​	
- +b 
-2
-​	
- )
-y
-^
-=
-f
-3
-(
-h
-2
-)
-=
-h
-2
-⋅
-W
-3
-+
-b
-3
-y
-^
-​	
- =f 
-3
-​	
- (h 
-2
-​	
- )=h 
-2
-​	
- ⋅W 
-3
-​	
- +b 
-3
-​	
+$h_1 = f_1(x) = \text{relu}(\boldsymbol{x} \cdot \boldsymbol{W_1} + \boldsymbol{b}_1)$
+
+$h_2 = f_2(\boldsymbol{h_1}) = \text{relu}(\boldsymbol{\boldsymbol{h_1}} \cdot \boldsymbol{W21} + \boldsymbol{b}_2)$
+
+$\hat{y} = f_3(\boldsymbol{h_2}) = \boldsymbol{h_2} + \boldsymbol{W_1} + \boldsymbol{b}_3$
  
-Note that we don’t have a 
-relu
-relu at the end because we want to be able to output negative numbers, and because the point of having 
-relu
-relu in the first place is to have non-linear transformations, and having the output be an affine linear transformation of some non-linear intermediate can be very sensible.
+Note that we don’t have a relu at the end because we want to be able to output negative numbers, and because the point of having relu in the first place is to have non-linear transformations, and having the output be an affine linear transformation of some non-linear intermediate can be very sensible.
 
-Batching
-For efficiency, you will be required to process whole batches of data at once rather than a single example at a time. This means that instead of a single input row vector 
-x
-x with size 
-i
-i, you will be presented with a batch of 
-b
-b inputs represented as a 
-b
-×
-i
-b×i matrix 
-X
-X. We provide an example for linear regression to demonstrate how a linear layer can be implemented in the batched setting.
+### Batching
 
-Randomness
+For efficiency, you will be required to process whole batches of data at once rather than a single example at a time. This means that instead of a single input row vector \boldsymbol{x} with size $i$, you will be presented with a batch of $b$ inputs represented as a $b \times i$ matrix $\boldsymbol{X}$. We provide an example for linear regression to demonstrate how a linear layer can be implemented in the batched setting.
+
+### Randomness
+
 The parameters of your neural network will be randomly initialized, and data in some tasks will be presented in shuffled order. Due to this randomness, it’s possible that you will still occasionally fail some tasks even with a strong architecture – this is the problem of local optima! This should happen very rarely, though – if when testing your code you fail the autograder twice in a row for a question, you should explore other architectures.
 
-Designing Architecture
+### Designing Architecture
+
 Designing neural nets can take some trial and error. Here are some tips to help you along the way:
 
-Be systematic. Keep a log of every architecture you’ve tried, what the hyperparameters (layer sizes, learning rate, etc.) were, and what the resulting performance was. As you try more things, you can start seeing patterns about which parameters matter. If you find a bug in your code, be sure to cross out past results that are invalid due to the bug.
-Start with a shallow network (just one hidden layer, i.e. one non-linearity). Deeper networks have exponentially more hyperparameter combinations, and getting even a single one wrong can ruin your performance. Use the small network to find a good learning rate and layer size; afterwards you can consider adding more layers of similar size.
-If your learning rate is wrong, none of your other hyperparameter choices matter. You can take a state-of-the-art model from a research paper, and change the learning rate such that it performs no better than random. A learning rate too low will result in the model learning too slowly, and a learning rate too high may cause loss to diverge to infinity. Begin by trying different learning rates while looking at how the loss decreases over time.
-Smaller batches require lower learning rates. When experimenting with different batch sizes, be aware that the best learning rate may be different depending on the batch size.
-Refrain from making the network too wide (hidden layer sizes too large) If you keep making the network wider accuracy will gradually decline, and computation time will increase quadratically in the layer size – you’re likely to give up due to excessive slowness long before the accuracy falls too much. The full autograder for all parts of the project takes 2-12 minutes to run with staff solutions; if your code is taking much longer you should check it for efficiency.
-If your model is returning Infinity or NaN, your learning rate is probably too high for your current architecture.
-Recommended values for your hyperparameters:
-Hidden layer sizes: between 10 and 400.
-Batch size: between 1 and the size of the dataset. For Q2 and Q3, we require that total size of the dataset be evenly divisible by the batch size.
-Learning rate: between 0.001 and 1.0.
-Number of hidden layers: between 1 and 3.
+- Be systematic. Keep a log of every architecture you’ve tried, what the hyperparameters (layer sizes, learning rate, etc.) were, and what the resulting performance was. As you try more things, you can start seeing patterns about which parameters matter. If you find a bug in your code, be sure to cross out past results that are invalid due to the bug.
+- Start with a shallow network (just one hidden layer, i.e. one non-linearity). Deeper networks have exponentially more hyperparameter combinations, and getting even a single one wrong can ruin your performance. Use the small network to find a good learning rate and layer size; afterwards you can consider adding more layers of similar size.
+- If your learning rate is wrong, none of your other hyperparameter choices matter. You can take a state-of-the-art model from a research paper, and change the learning rate such that it performs no better than random. A learning rate too low will result in the model learning too slowly, and a learning rate too high may cause loss to diverge to infinity. Begin by trying different learning rates while looking at how the loss decreases over time.
+- Smaller batches require lower learning rates. When experimenting with different batch sizes, be aware that the best learning rate may be different depending on the batch size.
+- Refrain from making the network too wide (hidden layer sizes too large) If you keep making the network wider accuracy will gradually decline, and computation time will increase quadratically in the layer size – you’re likely to give up due to excessive slowness long before the accuracy falls too much. The full autograder for all parts of the project takes 2-12 minutes to run with staff solutions; if your code is taking much longer you should check it for efficiency.
+- If your model is returning `Infinity` or `NaN`, your learning rate is probably too high for your current architecture.
+- Recommended values for your hyperparameters:
+    - Hidden layer sizes: between 10 and 400.
+    - Batch size: between 1 and the size of the dataset. For Q2 and Q3, we require that total size of the dataset be evenly divisible by the batch size.
+    - Learning rate: between 0.001 and 1.0.
+    - Number of hidden layers: between 1 and 3.
 
 ## Provided Code (Part II)
 
