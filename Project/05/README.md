@@ -59,7 +59,7 @@ For this project, you will need to install the following two libraries:
 
 - [numpy](https://numpy.org/), which provides support for fast, large multi-dimensional arrays.
 - [matplotlib](https://matplotlib.org/), a 2D plotting library.
-- 
+
 If you have a conda environment, you can install both packages on the command line by running:
 
 conda activate [your environment name]
@@ -77,16 +77,17 @@ After installing, try the dependency check.
 
 ## Provided Code (Part I)
 
-For this project, you have been provided with a neural network mini-library (nn.py) and a collection of datasets (backend.py).
+For this project, you have been provided with a neural network mini-library (1nn.py1) and a collection of datasets (1backend.py1).
 
-The library in nn.py defines a collection of node objects. Each node represents a real number or a matrix of real numbers. Operations on node objects are optimized to work faster than using Python’s built-in types (such as lists).
+The library in `nn.py` defines a collection of node objects. Each node represents a real number or a matrix of real numbers. Operations on node objects are optimized to work faster than using Python’s built-in types (such as lists).
 
 Here are a few of the provided node types:
 
-nn.Constant represents a matrix (2D array) of floating point numbers. It is typically used to represent input features or target outputs/labels. Instances of this type will be provided to you by other functions in the API; you will not need to construct them directly.
-nn.Parameter represents a trainable parameter of a perceptron or neural network.
-nn.DotProduct computes a dot product between its inputs. Additional provided functions:
-nn.as_scalar can extract a Python floating-point number from a node. When training a perceptron or neural network, you will be passed a dataset object. You can retrieve batches of training examples by calling dataset.iterate_once(batch_size):
+- `nn.Constant` represents a matrix (2D array) of floating point numbers. It is typically used to represent input features or target outputs/labels. Instances of this type will be provided to you by other functions in the API; you will not need to construct them directly.
+- `nn.Parameter` represents a trainable parameter of a perceptron or neural network.
+- `nn.DotProduct` computes a dot product between its inputs. Additional provided functions:
+- 
+`nn.as_scalar` can extract a Python floating-point number from a node. When training a perceptron or neural network, you will be passed a dataset object. You can retrieve batches of training examples by calling `dataset.iterate_once(batch_size)`:
 
 ```py
 for x, y in dataset.iterate_once(batch_size):
@@ -106,7 +107,7 @@ For example, let’s extract a batch of size 1 (i.e., a single training example)
 <Constant shape=1x1 at 0x11a89efd0>
 ```
 
-The input features x and the correct label y are provided in the form of nn.Constant nodes. The shape of x will be batch_size x num_features, and the shape of y is batch_size x num_outputs. So, each row of x is a point/ sample, and a column is the same feature of some samples. Here is an example of computing a dot product of x with itself, first as a node and then as a Python number.
+The input features `x` and the correct label `y` are provided in the form of `nn.Constant` nodes. The shape of `x` will be `batch_size x num_features`, and the shape of `y` is `batch_size x num_outputs`. So, each row of `x` is a point/ sample, and a column is the same feature of some samples. Here is an example of computing a dot product of x with itself, first as a node and then as a Python number.
 
 ```py
 >>> nn.DotProduct(x, x)
@@ -115,216 +116,14 @@ The input features x and the correct label y are provided in the form of nn.Cons
 1.9756581717465536
 ```
 
-Finally, here are some formulations of matrix multiplication (you can do some examples by hand to verify this). Let 
-A
-A be an 
-m
-×
-n
-m×n matrix and 
-B
-B be 
-n
-×
-p
-n×p; matrix multiplication works as follows:
+Finally, here are some formulations of matrix multiplication (you can do some examples by hand to verify this). Let $\bm{A}$ be an 
+$m \times n$ matrix and $\bm{B}$ be $n \times p$; matrix multiplication works as follows:
 
-A
-B
-=
-[
-A
-⃗
-0
-T
-A
-⃗
-1
-T
-⋯
-A
-⃗
-m
-−
-1
-T
- 
-]
-B
-=
-[
-A
-⃗
-0
-T
-B
-A
-⃗
-1
-T
-B
-⋯
-A
-⃗
-m
-−
-1
-T
-B
- 
-]
-A
-B
-=
-A
-[
-B
-⃗
-0
-B
-⃗
-1
-⋯
-B
-⃗
-p
-−
-1
- 
-]
-=
-[
-A
-B
-⃗
-0
-A
-B
-⃗
-1
-⋯
-A
-B
-⃗
-p
-−
-1
- 
-]
-AB= 
-​	
-  
-A
-  
-0
-T
-​	
- 
-A
-  
-1
-T
-​	
- 
-⋯
-A
-  
-m−1
-T
-​	
- 
-​	
-  
-​	
- B= 
-​	
-  
-A
-  
-0
-T
-​	
- B
-A
-  
-1
-T
-​	
- B
-⋯
-A
-  
-m−1
-T
-​	
- B
-​	
-  
-​	
- AB=A[ 
-B
-  
-0
-​	
- 
-​	
-  
-B
-  
-1
-​	
- 
-​	
-  
-⋯
-​	
-  
-B
-  
-p−1
-​	
- 
-​	
- ]=[ 
-A 
-B
-  
-0
-​	
- 
-​	
-  
-A 
-B
-  
-1
-​	
- 
-​	
-  
-⋯
-​	
-  
-A 
-B
-  
-p−1
-​	
- 
-​	
- ]
-As a sanity check, the dimensions are what we expect them to be, and the inner dimension of 
-n
-n is preserved for any remaining matrix multiplications.
-This is useful to see what happens when we multiply a batch matrix 
-X
-X by a weight matrix 
-W
-W, we are just multiplying each sample one at a time by the entire weight matrix via the first formulation. Within each sample times weights, we are just getting different linear combinations of the sample to go to each result column via the second formulation. Note that as long as the dimensiosn match, 
-A
-A can be a row vector and 
-B
-B a column vector.
+$\bm{AB} = $
+
+- As a sanity check, the dimensions are what we expect them to be, and the inner dimension of $n$ is preserved for any remaining matrix multiplications.
+
+- This is useful to see what happens when we multiply a batch matrix $\bm{X}$ by a weight matrix $\bm{W}$, we are just multiplying each sample one at a time by the entire weight matrix via the first formulation. Within each sample times weights, we are just getting different linear combinations of the sample to go to each result column via the second formulation. Note that as long as the dimensiosn match, $\bm{A}$ can be a row vector and $\bm{B}$ a column vector.
 
 ## Question 1 (6 points): Perceptron
 
