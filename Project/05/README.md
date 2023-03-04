@@ -240,47 +240,36 @@ Designing neural nets can take some trial and error. Here are some tips to help 
 
 ## Provided Code (Part II)
 
-Here is a full list of nodes available in nn.py. You will make use of these in the remaining parts of the assignment:
+Here is a full list of nodes available in `nn.py`. You will make use of these in the remaining parts of the assignment:
 
-nn.Constant represents a matrix (2D array) of floating point numbers. It is typically used to represent input features or target outputs/labels. Instances of this type will be provided to you by other functions in the API; you will not need to construct them directly.
-nn.Parameter represents a trainable parameter of a perceptron or neural network. All parameters must be 2-dimensional.
-Usage: nn.Parameter(n, m) constructs a parameter with shape n by m.
-nn.Add adds matrices element-wise.
-Usage: nn.Add(x, y) accepts two nodes of shape batch_size by num_features and constructs a node that also has shape batch_size by num_features.
-nn.AddBias adds a bias vector to each feature vector. Note: it automatically broadcasts the bias to add the same vector to every row of features.
-Usage: nn.AddBias(features, bias) accepts features of shape batch_size by num_features and bias of shape 1 by num_features, and constructs a node that has shape batch_size by num_features.
-nn.Linear applies a linear transformation (matrix multiplication) to the input.
-Usage: nn.Linear(features, weights) accepts features of shape batch_size by num_input_features and weights of shape num_input_features by num_output_features, and constructs a node that has shape batch_size by num_output_features.
-nn.ReLU applies the element-wise Rectified Linear Unit nonlinearity 
-relu
-(
-x
-)
-=
-max
-⁡
-(
-x
-,
-0
-)
-relu(x)=max(x,0). This nonlinearity replaces all negative entries in its input with zeros.
-Usage: nn.ReLU(features), which returns a node with the same shape as the input.
-nn.SquareLoss computes a batched square loss, used for regression problems.
-Usage: nn.SquareLoss(a, b), where a and b both have shape batch_size by num_outputs.
-nn.SoftmaxLoss computes a batched softmax loss, used for classification problems.
-Usage: nn.SoftmaxLoss(logits, labels), where logits and labels both have shape batch_size by num_classes. The term “logits” refers to scores produced by a model, where each entry can be an arbitrary real number. The labels, however, must be non-negative and have each row sum to 1. Be sure not to swap the order of the arguments!
-Do not use nn.DotProduct for any model other than the perceptron.
-The following methods are available in nn.py:
+- `nn.Constant` represents a matrix (2D array) of floating point numbers. It is typically used to represent input features or target outputs/labels. Instances of this type will be provided to you by other functions in the API; you will not need to construct them directly.
+- `nn.Parameter` represents a trainable parameter of a perceptron or neural network. All parameters must be 2-dimensional.
+    - Usage: `nn.Parameter(n, m)` constructs a parameter with shape `n` by `m`.
+- `nn.Add` adds matrices element-wise.
+    - Usage: `nn.Add(x, y)` accepts two nodes of shape `batch_size` by `num_features` and constructs a node that also has shape `batch_siz`e by `num_features`.
+- `nn.AddBias` adds a bias vector to each feature vector. **Note**: it automatically broadcasts the bias to add the same vector to every row of `features`.
+    - Usage: `nn.AddBias(features, bias)` accepts `features` of shape `batch_size` by `num_features` and `bias` of shape `1` by `num_features`, and constructs a node that has shape `batch_size` by `num_features`.
+- nn.Linear applies a linear transformation (matrix multiplication) to the input.
+    - Usage: `nn.Linear(features, weights)` accepts `features` of shape `batch_size` by `num_input_features` and `weights` of shape `num_input_features` by `num_output_features`, and constructs a node that has shape `batch_size` by `num_output_features`.
+- `nn.ReLU` applies the element-wise Rectified Linear Unit nonlinearity $\text{relu}(x)=\max(x,0)$. This nonlinearity replaces all negative entries in its input with zeros.
+    - Usage: `nn.ReLU(features)`, which returns a node with the same shape as the input.
+- `nn.SquareLoss` computes a batched square loss, used for regression problems.
+    - Usage: `nn.SquareLoss(a, b)`, where `a` and `b` both have shape `batch_size` by `num_outputs`.
+- `nn.SoftmaxLoss` computes a batched softmax loss, used for classification problems.
+    - Usage: `nn.SoftmaxLoss(logits, labels)`, where `logits` and `labels` both have shape `batch_size` by `num_classes`. The term “logits” refers to scores produced by a model, where each entry can be an arbitrary real number. The labels, however, must be non-negative and have each row sum to 1. Be sure not to swap the order of the arguments!
+- Do not use `nn.DotProduct` for any model other than the perceptron.
 
-nn.gradients computes gradients of a loss with respect to provided parameters.
-Usage: nn.gradients(loss, [parameter_1, parameter_2, ..., parameter_n]) will return a list [gradient_1, gradient_2, ..., gradient_n], where each element is an nn.Constant containing the gradient of the loss with respect to a parameter.
-nn.as_scalar can extract a Python floating-point number from a loss node. This can be useful to determine when to stop training.
-Usage: nn.as_scalar(node), where node is either a loss node or has shape (1,1).
+The following methods are available in `nn.py`:
+
+- `nn.gradients` computes gradients of a loss with respect to provided parameters.
+    - Usage: `nn.gradients(loss, [parameter_1, parameter_2, ..., parameter_n])` will return a list `[gradient_1, gradient_2, ..., gradient_n]`, where each element is an `nn.Constant` containing the gradient of the loss with respect to a parameter.
+- `nn.as_scalar` can extract a Python floating-point number from a loss node. This can be useful to determine when to stop training.
+    - Usage: `nn.as_scalar(node)`, where node is either a loss node or has shape (1,1).
+
 The datasets provided also have two additional methods:
 
-dataset.iterate_forever(batch_size) yields an infinite sequences of batches of examples.
-dataset.get_validation_accuracy() returns the accuracy of your model on the validation set. This can be useful to determine when to stop training.
+- `dataset.iterate_forever(batch_size)` yields an infinite sequences of batches of examples.
+- `dataset.get_validation_accuracy()` returns the accuracy of your model on the validation set. This can be useful to determine when to stop training.
 
 ## Example: Linear Regression
 
