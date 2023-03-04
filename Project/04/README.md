@@ -121,9 +121,9 @@ This is a factor satisfying two properties:
 
 1. Its entries must sum to 1 for each assignment of the conditional variables.
 2. There is exactly one unconditioned variable. The Traffic Bayes Net stores the following CPTs: 
- - $P(Raining)$
- - $P(Ballgame)$
- - $(P(Traffic | Ballgame, Raining)$
+ - $P(\text{Raining})$
+ - $P(\text{Ballgame})$
+ - $(P(\text{Traffic} | \text{Ballgame}, \text{Raining})$
 
 ## Question 1 (2 points): Bayes Net Structure
 
