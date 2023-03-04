@@ -294,14 +294,14 @@ $$
  
 Suppose the data is provided to us in the form of `nn.Constant` nodes:
 
-``sh
+```sh
 >>> x
 <Constant shape=4x2 at 0x10a30fe80>
 >>> y
 <Constant shape=4x1 at 0x10a30fef0>
-``
+```
 
-Let’s construct and train a model of the form $f(\boldsymbol{x}) = x_0 \cdot m_0 + x_1 \cdot m_1 + b$. If done correctly, we should be able to learn that $m_0 = 7, m_1 = 8, and b = 3$.
+Let’s construct and train a model of the form $f(\boldsymbol{x}) = x_0 \cdot m_0 + x_1 \cdot m_1 + b$. If done correctly, we should be able to learn that $m_0 = 7$, $m_1 = 8$, and $b = 3$.
 
 First, we create our trainable parameters. In matrix form, these are:
 
@@ -454,16 +454,20 @@ In this project, we’re going to build a smaller neural network model that iden
 
 Different words consist of different numbers of letters, so our model needs to have an architecture that can handle variable-length inputs. Instead of a single input $x$ (like in the previous questions), we’ll have a separate input for each character in the word: $x_0, x_1, \cdots ,x_{L-1}$	where $L$ is the length of the word. We’ll start by applying a network $f_{\text{initial}}$ that is just like the networks in the previous problems. It accepts its input $x_0$ and computes an output vector $h_1$ of dimensionality $d$:
 
-$h_1 = f_{\text{initial}}(x_0)$
+$$
+h_1 = f_{\text{initial}}(x_0)
+$$
  
 Next, we’ll combine the output of the previous step with the next letter in the word, generating a vector summary of the the first two letters of the word. To do this, we’ll apply a sub-network that accepts a letter and outputs a hidden state, but now also depends on the previous hidden state $h_1$. We denote this sub-network as $f$.
 
-$h_2 = f(h_1,x_1)$
+$$
+h_2 = f(h_1,x_1)
+$$
 
 This pattern continues for all letters in the input word, where the hidden state at each step summarizes all the letters the network has processed thus far:
 
 $$
-h_3 = f(h_2,x_2)
+h_3 = f(h_2,x_2) \\
 \vdots
 $$
 
@@ -496,8 +500,8 @@ Although the above equations are in terms of a single word, in practice you must
 The design of the recurrent function $f(\cdot,\cdot)$ is the primary challenge for this task. Here are some tips:
 
 - Start with an architecture $f_{\text{initial}}(x)$ of your choice similar to the previous questions, as long as it has at least one non-linearity.
-- You should use the following method of constructing $f(\cdot,\cdot)$ given $f_{\text{initial}}(x)$. The first transformation layer of $f_{\text{initial}}$ will begin by multiplying the vector $x_0$ by some weight matrix $\boldsymbol{W_x}$ to produce $z_0 = x_0 \cdot \boldsymbol{W_x}$. For subsequent letters, you should replace this computation with $z_i = x_i \cdot \boldsymbol{W_x} + h_i \cdot \boldsymbol{W_{hidden}} using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`.
-- If done correctly, the resulting function $f(x_i,h_i) = g(z_i) = g(z_x_i,h_i)$ will be non-linear in both $x$ and $h$.
+- You should use the following method of constructing $f(\cdot,\cdot)$ given $f_{\text{initial}}(x)$. The first transformation layer of $f_{\text{initial}}$ will begin by multiplying the vector $x_0$ by some weight matrix $\boldsymbol{W_x}$ to produce $z_0 = x_0 \cdot \boldsymbol{W_x}$. For subsequent letters, you should replace this computation with $z_i = x_i \cdot \boldsymbol{W_x} + h_i \cdot \boldsymbol{W_{hidden}}$ using an `nn.Add` operation. In other words, you should replace a computation of the form `z0 = nn.Linear(x, W)` with a computation of the form `z = nn.Add(nn.Linear(x, W), nn.Linear(h, W_hidden))`.
+- If done correctly, the resulting function $f(x_i,h_i) = g(z_i) = g(z_{x_i},h_i)$ will be non-linear in both $x$ and $h$.
 - The hidden size `d` should be sufficiently large.
 - Start with a shallow network for $f$, and figure out good values for the hidden size and learning rate before you make the network deeper. If you start with a deep network right away you will have exponentially more hyperparameter combinations, and getting any single hyperparameter wrong can cause your performance to suffer dramatically.
 
