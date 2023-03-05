@@ -102,6 +102,56 @@ Suppose that we are performing value iteration on the grid world MDP below.
 
 
 
-3. 
+3. Fill in the optimal values for A and B in the given boxes.
+
+$V^{\ast}(A)$
+|                            |
+| -------------------------- |
+| __________________________ |
+
+$V^{\ast}(B)$
+|                            |
+| -------------------------- |
+| __________________________ |
+
+
+4. After how many iterations $k$ will we have $V_k(s) = V^{\ast}(s)$ for all states $s$? If it never occurs, write “never". Write
+your answer in the given box.
+
+|                            |
+| -------------------------- |
+| __________________________ |
+
+5. Suppose that we wanted to re-design the reward function. For which of the following new reward functions would the optimal policy **remain unchanged**? Let $R(s,a,s^{\prime})$ be the original reward function.
+
+$\square$ $R(s,a,s^{\prime}) = 10R(s,a,s^{\prime})$
+
+$\square$ $R(s,a,s^{\prime}) = 1 + R(s,a,s^{\prime})$
+
+$\square$ $R(s,a,s^{\prime}) = R(s,a,s^{\prime})^2$
+
+$\square$ $R(s,a,s^{\prime}) = -1$
+
+$\square$ None
+
+For the following problem, we add a new state in which we can take the *EXIT* action with a reward of $+x$.
+
+6. For what values of $x$ is it *guaranteed* that our optimal policy $\pi^{\ast}$ has $\pi^{\ast}(C) = \leftarrow$? Write $\infty$ and $-\infty$ if there is no upper or lower bound, respectively. Write the upper and lower bounds in each respective box.
+
+|                            |
+| -------------------------- |
+| __________________________ |
+
+7. For what values of 𝑥 does value iteration take the **minimum** number of iterations $k$ to converge to $V^{\ast}$ for all states? Write $\infty$ and $-\infty$ if there is no upper or lower bound, respectively. Write the upper and lower bounds in each respective box.
+
+|                            |
+| -------------------------- |
+| __________________________ |
+
+8. Fill the box with value $k$, the **minimum** number of iterations until $V_k$ has converged to $V^{\ast}$ for all states.
+
+|                            |
+| -------------------------- |
+| __________________________ |
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
