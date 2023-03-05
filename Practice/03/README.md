@@ -352,7 +352,7 @@ In this question we want to determine relations between the values at the root o
 
 All three game trees use the same values at the leaves, represented by $a,b,c,\text{ and }d$. The chance nodes can have any distribution over actions, that is, they can choose right or left with any probability. The chance node distributions can also vary between the trees.
 
-For each case below, write the relationship between the values using $<,\le,>,\ge,=,\text{ or }NR$. Write $NR$ if no relation can be confirmed given the current information. Briefly justify each answer (one sentence at most). (Hint: try combinations of $-\infty,-1,0,1,+\infty$ for $a,b,c,\text{ and }d$)
+For each case below, write the relationship between the values using $<,\le,>,\ge,=,\text{ or }NR$. Write $NR$ if no relation can be confirmed given the current information. Briefly justify each answer (one sentence at most). (Hint: try combinations of $\lbrace -\infty,-1,0,1,+\infty  \rbrace$ for $a,b,c,\text{ and }d$)
 
 10. $X_1 ? X_3$
 
