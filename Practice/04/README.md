@@ -140,20 +140,14 @@ For the following problem, we add a new state in which we can take the *EXIT* ac
 
 6. For what values of $x$ is it *guaranteed* that our optimal policy $\pi^{\ast}$ has $\pi^{\ast}(C) = \leftarrow$? Write $\infty$ and $-\infty$ if there is no upper or lower bound, respectively. Write the upper and lower bounds in each respective box.
 
-|                            |
-| -------------------------- |
-| __________________________ |
+______ $< x <$ ______
 
 7. For what values of 𝑥 does value iteration take the **minimum** number of iterations $k$ to converge to $V^{\ast}$ for all states? Write $\infty$ and $-\infty$ if there is no upper or lower bound, respectively. Write the upper and lower bounds in each respective box.
 
-|                            |
-| -------------------------- |
-| __________________________ |
+
 
 8. Fill the box with value $k$, the **minimum** number of iterations until $V_k$ has converged to $V^{\ast}$ for all states.
 
-|                            |
-| -------------------------- |
-| __________________________ |
+______ $\le x \le$ ______
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
