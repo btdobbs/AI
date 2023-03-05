@@ -100,7 +100,7 @@ For all parts of the problem, assume that value iteration begins with all states
 
 Suppose that we are performing value iteration on the grid world MDP below.
 
-
+![g1](https://github.com/btdobbs/AI/blob/main/Practice/04/g1.png)
 
 3. Fill in the optimal values for A and B in the given boxes.
 
@@ -135,6 +135,8 @@ $\square$ $R(s,a,s^{\prime}) = -1$
 $\square$ None
 
 For the following problem, we add a new state in which we can take the *EXIT* action with a reward of $+x$.
+
+![g2](https://github.com/btdobbs/AI/blob/main/Practice/04/g2.png)
 
 6. For what values of $x$ is it *guaranteed* that our optimal policy $\pi^{\ast}$ has $\pi^{\ast}(C) = \leftarrow$? Write $\infty$ and $-\infty$ if there is no upper or lower bound, respectively. Write the upper and lower bounds in each respective box.
 
