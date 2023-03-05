@@ -144,10 +144,12 @@ ______ $< x <$ ______
 
 7. For what values of 𝑥 does value iteration take the **minimum** number of iterations $k$ to converge to $V^{\ast}$ for all states? Write $\infty$ and $-\infty$ if there is no upper or lower bound, respectively. Write the upper and lower bounds in each respective box.
 
-
+______ $\le x \le$ ______
 
 8. Fill the box with value $k$, the **minimum** number of iterations until $V_k$ has converged to $V^{\ast}$ for all states.
 
-______ $\le x \le$ ______
+|                            |
+| -------------------------- |
+| __________________________ |
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
