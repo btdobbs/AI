@@ -6,7 +6,7 @@ For questions with square checkboxes ($\square$), you may select one or more cho
 
 **Please show all work for credit.**
 
-# Searching with Heuristics
+# Searching with Heuristics (10 points)
 
 Consider the $A^\ast$ searching process on the connected undirected graph, with starting node $S$ and the goal node $G$. Suppose the
 cost for each connection edge is **always positive**. We define $h^*(𝑋)$ as the shortest (optimal) distance to G from a node $X$.
@@ -146,7 +146,7 @@ $\bigcirc$ Bob’s conclusion is wrong, because the heuristic $h^{\prime\prime}$
 
 $\bigcirc$ Bob’s conclusion is wrong, because of another reason that is not listed above.
 
-# CSPs
+# CSPs (8 points)
 
 In this question, you are trying to find a four-digit number satisfying the following conditions:
 
