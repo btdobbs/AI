@@ -354,11 +354,11 @@ All three game trees use the same values at the leaves, represented by $a,b,c,\t
 
 For each case below, write the relationship between the values using $<,\le,>,\ge,=,\text{ or }NR$. Write $NR$ if no relation can be confirmed given the current information. Briefly justify each answer (one sentence at most). (Hint: try combinations of $\lbrace -\infty,-1,0,1,+\infty  \rbrace$ for $a,b,c,\text{ and }d$)
 
-10. $X_1  \square  X_3$
+10. $X_1$ ______ $X_3$
 
 \
 \
-11. $X_2  \square  X_3$
+11. $X_2$ ______ $X_3$
 
 \
 \
