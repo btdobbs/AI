@@ -230,7 +230,7 @@ $\bigcirc$ False
 
 \
 \
-Let $X_1, X_2, and X_3$ be the values at each root in the above minimax game trees. In these trees $a,b,c,d,e,f$ are constants (they are the same across all three trees). Determine which of the following statements are true for all possible assignments to constants $a,b,c,d,e,f$
+Let $X_1, X_2, and X_3$ be the values at each root in the above minimax game trees. In these trees $a,b,c,d,e,\text{ and }f$ are constants (they are the same across all three trees). Determine which of the following statements are true for all possible assignments to constants $a,b,c,d,e,\text{ and }f$
 
 ```mermaid
 flowchart TD
@@ -306,13 +306,60 @@ $\bigcirc$ True
 
 $\bigcirc$ False 
 
+```mermaid
+flowchart TD
+    id1[\X1/] --- id2
+    id1 --- id3
+    id2[a]
+    id3[/ \] --- id4
+    id3 --- id5
+    id4[b]
+    id5(( )) --- id6
+    id5 --- id7
+    id6[c]
+    id7[d]
+```
+
+```mermaid
+flowchart TD
+    id1((X2)) --- id2
+    id1 --- id3
+    id2[a]
+    id3[/ \] --- id4
+    id3 --- id5
+    id4[b]
+    id5[\ /] --- id6
+    id5 --- id7
+    id6[c]
+    id7[d]
+```
+
+```mermaid
+flowchart TD
+    id1[/X3\] --- id2
+    id1 --- id3
+    id2[a]
+    id3(( )) --- id4
+    id3 --- id5
+    id4[b]
+    id5[\ /] --- id6
+    id5 --- id7
+    id6[c]
+    id7[d]
+```
+
 In this question we want to determine relations between the values at the root of the new game trees above (that is, between $X_1$, $X_2$, and $X_3$).
 
-All three game trees use the same values at the leaves, represented by $a,b,c,d$. The chance nodes can have any distribution over actions, that is, they can choose right or left with any probability. The chance node distributions can also vary between the trees.
+All three game trees use the same values at the leaves, represented by $a,b,c,\text{ and }d$. The chance nodes can have any distribution over actions, that is, they can choose right or left with any probability. The chance node distributions can also vary between the trees.
 
-For each case below, write the relationship between the values using $<,\le,>,\ge,=,\text{ or }NR$. Write $NR$ if no relation can be confirmed given the current information. Briefly justify each answer (one sentence at most). (Hint: try combinations of $/{ -\infty,-1,0,1,+\infty  /}$ for $a,b,c,d$)
+For each case below, write the relationship between the values using $<,\le,>,\ge,=,\text{ or }NR$. Write $NR$ if no relation can be confirmed given the current information. Briefly justify each answer (one sentence at most). (Hint: try combinations of $-\infty,-1,0,1,+\infty$ for $a,b,c,\text{ and }d$)
 
-10. a
+10. $X_1 ? X_3$
 
-11. b
+\
+\
+11. $X_2 ? X_3$
+
+\
+\
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
