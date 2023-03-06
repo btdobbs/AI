@@ -25,15 +25,21 @@ Suppose you can **only control 1 SpongeBob car**, and have absolutely no informa
 
 1. What is the **tightest upper bound** on the size of state space, if your goal is to use search to plan a sequence of actions that guarantees Pacman is caught, no matter where Pacman is hiding, or what actions other SpongeBob cars take. Please note that your state space representation must be able to represent **all** states in the search space.
 
-|                            |
-| -------------------------- |
-| __________________________ |
+```
+
+
+
+
+```
 
 2. What is the maximum branching factor? Your answer may contain integers, $m,n$.
 
-|                            |
-| -------------------------- |
-| __________________________ |
+```
+
+
+
+
+```
 
 3. Which algorithm(s) is/are guaranteed to return a path passing through all grid locations on the grid, if one exists?
 
