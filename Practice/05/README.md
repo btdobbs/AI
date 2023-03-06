@@ -6,7 +6,7 @@ For questions with square checkboxes ($\square$), you may select one or more cho
 
 **Please show all work for credit.**
 
-# Policy Evaluation
+# Policy Evaluation (4 points)
 
 In this question, you will be working in an MDP with states $S$, actions $A$, discount factor $\gamma$, transition function $T$, and reward
 function $R$.
@@ -69,6 +69,36 @@ $\square$ model-based
 
 $\square$ model-free
 
-# MDPs & RL
+# MDPs & RL (5 points)
+
+![gw](https://github.com/btdobbs/AI/blob/main/Practice/05/gw.png)
+
+Consider the grid-world MDP above. The goal of the game is to reach the pot of gold. As soon as you land on the pot of gold you receive a reward and the game ends. Your agent can move around the grid by taking the following actions: North, South, East, West. Moving into a square that is not a wall is always successful. If you attempt to move into a grid location occupied by a wall or attempt to move off the board, you remain in your current grid location.
+
+Our goal is to build a value function that assigns values to each grid location, but instead of keeping track of a separate number for each location, we are going to use features. Specifically, suppose we represent the value of state $(x,y)$ (a grid location) as $V(x,y) = w^T f(x,y)$. Here, $f(x,y)$ is a feature function that maps the grid location $(x,y)$ to a vector of features and $w$ is a weight vector that parameterizes our value function (note that entries in $w$ can be any real number, positive or negative).
+
+In the next few questions, we will look at various possible feature functions $f(x,y)$. We will think about the value functions that are representable using each set of features, and, further, think about which policies could be extracted from those value functions. Assume that when a policy is extracted from a value function, ties can be broken arbitrarily. In our definition of feature functions we will make use of the location of the pot of gold. Let the gold’s location be $(x^{\ast},y^{\ast})$. Keep in mind the policies (*i*), (*ii*), (*iii*), (*iv*), (*v*), and (*vi*) shown below.
+
+![gw-q](https://github.com/btdobbs/AI/blob/main/Practice/05/gw-q.png)
+
+1. Suppose we use a single feature: the x-distance to the pot of gold. Specifically, suppose $f(x,y) = | x - x^{ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+
+$\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
+
+2. Suppose we use a single feature: the y-distance to the pot of gold. Specifically, suppose $f(x,y) = | y - y^{ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+
+$\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
+
+3. Suppose we use a single feature: the Manhattan distance to the pot of gold. Specifically, suppose $f(x,y) = | x - x^{ast}| + | y - y^{ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+
+$\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
+
+4. Suppose we use a single feature: the length of the shortest path to the pot of gold. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+
+$\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
+
+5. Suppose we use a single feature: the x-distance to the pot of gold and the y-distance to the pot of gold. Specifically, suppose $f(x,y) = (| x - x^{ast}|,  | y - y^{ast}|)$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+
+$\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
