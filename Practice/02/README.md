@@ -193,9 +193,12 @@ $\square$ 5
 
 4. Now suppose we are running min-conflicts to try to solve this CSP. If we start with the number 1332, what will our number be after one interation of min-conflicts? Break variable selection ties from left to right, and **break value selection ties from small (1) to large (5).**
 
-|                            |
-| -------------------------- |
-| __________________________ |
+```
+
+
+
+
+```
 
 ## Question 2
 
