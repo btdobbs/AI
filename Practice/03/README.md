@@ -27,19 +27,28 @@ For a complete assignment $P = \{ A:V_A, B:V_B, \cdots , D:V_D \}$, the utility 
 
 We can now define a modified CSP problem, whose goal is to find the valid assignment which has the maximum utility amongst all valid assignments.
 
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
 ## Question 2
 
 Suppose the utilities for the assignment of values to variables is given by the table below
@@ -148,10 +157,14 @@ $$
 
 2. For the expressions for $f(X)$ which guaranteed to give an optimal solution in part(1) among $f_1,f_2,f_3,f_4,f_5,f_6$,
 order them in ascending order of number of nodes expanded by ModifiedTreeSearch.
-\
-\
-\
-\
+
+```
+
+
+
+
+```
+
 # Games (11 points)
 
 ```mermaid
@@ -183,16 +196,20 @@ flowchart TD
 
 1. What is the minimax value of node A in the tree above?
 
-|                            |
-| -------------------------- |
-| __________________________ |
+```
+
+
+
+
+```
 
 2. List the nodes that are pruned by alpha-beta pruning. Assume the standard left-to-right traversal of the tree. If a
 non-terminal state (A, B, C, D, E, or F) is pruned, list the entire subtree.
 
-|                            |
-| -------------------------- |
-| __________________________ |
+```
+
+
+```
 
 If a function $F$ is strictly increasing, then $F(a) < F(b) \forall a < b \text{ and } a,b \in \mathbb{R}$. Consider applying a strictly increasing function $F$ to the leaves of a game tree and comparing the old tree and the new tree.
 
@@ -204,32 +221,40 @@ $\bigcirc$ True
 
 $\bigcirc$ False 
 
-\
-\
+```
+
+
+```
 4. In a *Minimax* two player zero-sum game, applying $F$ will not affect which nodes are pruned by alpha-beta pruning.
 
 $\bigcirc$ True
 
 $\bigcirc$ False 
 
-\
-\
+```
+
+
+```
 5. In a *Minimax* two player non-zero-sum game (where the utilities of players do not necessarily add up to zero), applying $F$ will not change the optimal *action*.
 
 $\bigcirc$ True
 
 $\bigcirc$ False 
 
-\
-\
+```
+
+
+```
 6. In an *Expectimax* two player zero-sum game, applying $F$ will not change the optimal *action*.
 
 $\bigcirc$ True
 
 $\bigcirc$ False 
 
-\
-\
+```
+
+
+```
 Let $X_1, X_2, and X_3$ be the values at each root in the above minimax game trees. In these trees $a,b,c,d,e,\text{ and }f$ are constants (they are the same across all three trees). Determine which of the following statements are true for all possible assignments to constants $a,b,c,d,e,\text{ and }f$
 
 ```mermaid
@@ -356,10 +381,20 @@ For each case below, write the relationship between the values using $<,\le,>,\g
 
 10. $X_1$ ______ $X_3$
 
-\
-\
+```
+
+
+
+
+```
+
 11. $X_2$ ______ $X_3$
 
-\
-\
+```
+
+
+
+
+```
+
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
