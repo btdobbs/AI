@@ -65,9 +65,9 @@ $\bigcirc$ $\vec{w} \leftarrow \vec{w} - \alpha \[ Q(s_t, a_t) - Q_{\text{samp}}
 
 4. The algorithms in the previous parts (part 2 and 3) are:
 
-$\square$ model-based
+$\bigcirc$ model-based
 
-$\square$ model-free
+$\bigcirc$ model-free
 
 # MDPs & RL (5 points)
 
