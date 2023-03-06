@@ -149,7 +149,7 @@ Your current factors are $f(A), f(B), f(B,D), f(A,B,C,D,E)$. Note: these are fac
 Number of edges =
 
 ```mermaid
-flowchart LR
+flowchart TD
     id1((A))
     id2((B))
     id3((C))
@@ -162,7 +162,7 @@ flowchart LR
 Number of edges =
 
 ```mermaid
-flowchart LR
+flowchart TD
     id1((A))
     id2((B))
     id3((C))
