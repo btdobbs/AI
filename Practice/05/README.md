@@ -47,7 +47,7 @@ $$
 Q(s_t,a_t) \leftarrow (1 - \alpha)Q(s_t, a_t) + \alpha \[  \rule{10cm}{0.15mm}  \]
 $$
 
-3. Now, we will approximate $Q^{\pi}$ using a linear function: $Q(s,a) = \vec{w}^Tf(s,a)$ for a weight vector $\vec{w}$ and feature function $f(s,a)$. To decouple this part from the previous part, use $Q_{\text{samp}} for the value in the black in part (2) (i.e. $Q(s_t,a_t) \leftarrow (1-\alpha)Q(s_t,a_t) + \alpha Q_{\text{samp}}).
+3. Now, we will approximate $Q^{\pi}$ using a linear function: $Q(s,a) = \vec{w}^Tf(s,a)$ for a weight vector $\vec{w}$ and feature function $f(s,a)$. To decouple this part from the previous part, use $Q_{\text{samp}}$ for the value in the black in part (2) (i.e. $Q(s_t,a_t) \leftarrow (1-\alpha)Q(s_t,a_t) + \alpha Q_{\text{samp}})$.
 
 Which of the following is the correct sample-based update for $\vec{w}$?
 
@@ -81,15 +81,15 @@ In the next few questions, we will look at various possible feature functions $f
 
 ![gw-q](https://github.com/btdobbs/AI/blob/main/Practice/05/gw-q.png)
 
-1. Suppose we use a single feature: the x-distance to the pot of gold. Specifically, suppose $f(x,y) = | x - x^{ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+1. Suppose we use a single feature: the x-distance to the pot of gold. Specifically, suppose $f(x,y) = | x - x^{\ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
 
 $\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
 
-2. Suppose we use a single feature: the y-distance to the pot of gold. Specifically, suppose $f(x,y) = | y - y^{ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+2. Suppose we use a single feature: the y-distance to the pot of gold. Specifically, suppose $f(x,y) = | y - y^{\ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
 
 $\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
 
-3. Suppose we use a single feature: the Manhattan distance to the pot of gold. Specifically, suppose $f(x,y) = | x - x^{ast}| + | y - y^{ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+3. Suppose we use a single feature: the Manhattan distance to the pot of gold. Specifically, suppose $f(x,y) = | x - x^{\ast}| + | y - y^{\ast}|$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
 
 $\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
 
@@ -97,7 +97,7 @@ $\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*
 
 $\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
 
-5. Suppose we use a single feature: the x-distance to the pot of gold and the y-distance to the pot of gold. Specifically, suppose $f(x,y) = (| x - x^{ast}|,  | y - y^{ast}|)$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
+5. Suppose we use a single feature: the x-distance to the pot of gold and the y-distance to the pot of gold. Specifically, suppose $f(x,y) = (| x - x^{\ast}|,  | y - y^{\ast}|)$. Which of the policies could be extracted from a value function that is representable using this feature function? Assume the weights vector $w$ is not allowed to be 0. Fill in all that apply.
 
 $\square$ (*i*) $\square$ (*ii*) $\square$ (*iii*) $\square$ (*iv*) $\square$ (*v*) $\square$ (*vi*)
 
