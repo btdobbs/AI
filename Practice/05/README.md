@@ -41,13 +41,33 @@ which approximates the expected discounted reward $V^{\pi} (s)$ for following po
 rate $\alpha$.
 
 Fill in the blank below to create a similar update equation which will approximate $Q^{\pi}$ using the samples.
-You can use any of the terms $Q, s_t, s_{t+1}, a_t, a_{t+1}, r_t, r_{t+1}, \gamma, \alpha, \pi$ in your equation, as well as $\sum$ and max with any index variables (i.e. you could write $\max_{\alpha}$, or $\sum_{\alpha}$ and then use $\alpha$ somewhere else), but no other terms.
+You can use any of the terms $Q, s_t, s_{t+1}, a_t, a_{t+1}, r_t, r_{t+1}, \gamma, \alpha, \pi$ in your equation, as well as $\sum$ and max with any index variables (i.e. you could write $\max_a$, or $\sum_a$ and then use $a$ somewhere else), but no other terms.
 
 $$
-Q(s_t,a_t) \leftarrow (1 - \alpha)Q(s_t, \alpha_t) + \alpha[]
+Q(s_t,a_t) \leftarrow (1 - \alpha)Q(s_t, a_t) + \alpha \[  \rule{10cm}{0.15mm}  \]
 $$
 
-3. 3
+3. Now, we will approximate $Q^{\pi}$ using a linear function: $Q(s,a) = \vec{w}^Tf(s,a)$ for a weight vector $\vec{w}$ and feature function $f(s,a)$. To decouple this part from the previous part, use $Q_{\text{samp}} for the value in the black in part (2) (i.e. $Q(s_t,a_t) \leftarrow (1-\alpha)Q(s_t,a_t) + \alpha Q_{\text{samp}}).
+
+Which of the following is the correct sample-based update for $\vec{w}$?
+
+$\bigcirc$ $\vec{w} \leftarrow \vec{w} + \alpha \[ Q(s_t, a_t) - Q_{\text{samp}} \]$
+
+$\bigcirc$ $\vec{w} \leftarrow \vec{w} - \alpha \[ Q(s_t, a_t) - Q_{\text{samp}} \]$
+
+$\bigcirc$ $\vec{w} \leftarrow \vec{w} + \alpha \[ Q(s_t, a_t) - Q_{\text{samp}} \]f(s_t,a_t)$
+
+$\bigcirc$ $\vec{w} \leftarrow \vec{w} - \alpha \[ Q(s_t, a_t) - Q_{\text{samp}} \]f(s_t,a_t)$
+
+$\bigcirc$ $\vec{w} \leftarrow \vec{w} + \alpha \[ Q(s_t, a_t) - Q_{\text{samp}} \]\vec{w}$
+
+$\bigcirc$ $\vec{w} \leftarrow \vec{w} - \alpha \[ Q(s_t, a_t) - Q_{\text{samp}} \]\vec{w}$
+
+4. The algorithms in the previous parts (part 2 and 3) are:
+
+$\square$ model-based
+
+$\square$ model-free
 
 # MDPs & RL
 
