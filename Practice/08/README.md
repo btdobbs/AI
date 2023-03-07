@@ -36,13 +36,13 @@ $\bigcirc$ 1
 
 **($iii$)**
 
-$\bigcirc$ $\sum_{x_{t-1}}
+$\bigcirc$ $\sum_{x_{t-1}}$
 
-$\bigcirc$ $\sum_{x_t}
+$\bigcirc$ $\sum_{x_t}$
 
-$\bigcirc$ $\max_{x_{t-1}}
+$\bigcirc$ $\max_{x_{t-1}}$
 
-$\bigcirc$ $\max_{x_t}
+$\bigcirc$ $\max_{x_t}$
 
 $\bigcirc$ 1
 
