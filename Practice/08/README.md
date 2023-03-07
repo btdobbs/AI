@@ -10,6 +10,38 @@ For questions with square checkboxes ($\square$), you may select one or more cho
 
 Mesut is trying to remotely control a car, which has gone out of his view. The unknown state of the car is represented by the random variable $X$. While Mesut can’t see the car itself, his high-tech sensors on the car provides two useful readings: an estimate (E) of the distance to the car in front, and a detection model (D) that detects if the car is headed into a wall. Using these two readings, Mesut applies the controls (C), which determine the velocity of the car by changing the acceleration. The Dynamic Bayes Net below describes the setup.
 
+```mermaid
+flowchart LR
+    id1[...] ---> id4
+    id2[...]
+    id3[...] ---> id7
+    id3 ---> id4
+    id4((X_t-1)) ---> id8
+    id4 ---> id5
+    id4 ---> id6
+    id5((E_t-1)) ---> id7
+    id6((D_t-1)) ---> id7
+    id7((C_t-1)) ---> id11
+    id7 ---> id8
+    id8((X_t)) ---> id12
+    id8 ---> id9
+    id8 ---> id10
+    id9((E_t)) ---> id11
+    id10((D_t)) ---> id11
+    id11((C_t)) ---> id15
+    id11 ---> id12
+    id12((X_t+1)) ---> id16
+    id12 ---> id13
+    id12 ---> id14
+    id13((E_t+1)) ---> id15
+    id14((D_t+1)) ---> id15
+    id15((C_t+1)) ---> id16
+    id15 ---> id18
+    id16[...] ~~~ id17
+    id17[...] ~~~ id18
+    id18[...]
+```
+
 1. For the above DBN, complete the equations for performing updates. (Hint: think about the prediction update and obser- vation update equations in the forward algorithm for HMMs.)
 
 Time elapse: **($i$)** = **($ii$)** **($iii$)** **($iv$)** $P(x_{t-1} \mid e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
