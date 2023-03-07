@@ -68,8 +68,57 @@ $\bigcirc$ 1
 
 Update to incorporate new evidence at time $t$:
 
+$P(x_t \mid e_{0:t}, d_{0:t}, c_{0:t})=$ **($v$)** **($vi$)** **($vii$)** **Your choice for ($i$)**
 
+**($v$)**
 
+$\bigcirc$ $(P(c_t \mid c_{0:t-1}))^-1$
+
+$\bigcirc$ $(P(e_t \mid e_{0:t-1})P(d_t \mid d_{0:t-1})P(c_t \mid c_{0:t-1}))^-1$
+
+$\bigcirc$ $(P(e_t, d_t, c_t \mid e_{0:t-1}, d_{0:t-1}, c_{0:t-1}))^-1$
+
+$\bigcirc$ $(P(e_{0:t-1} \mid e_t)(P(d_{0:t-1} \mid d_t)(P(c_{0:t-1} \mid c_t))^-1$
+
+$\bigcirc$ $(P(e_{0:t-1}, d_{0:t-1}, c_{0:t-1} \mid e_t, d_t, c_t))^-1$
+
+$\bigcirc$ 1
+
+**($vi$)**
+
+$\bigcirc$ $\sum_{x_{t-1}}$
+
+$\bigcirc$ $\sum_{x_t}$
+
+$\bigcirc$ $\sum_{x_{t-1}, x_t}$
+
+$\bigcirc$ $\max_{x_{t-1}}$
+
+$\bigcirc$ $\max_{x_t}$
+
+$\bigcirc$ 1
+
+**($iv$)**
+
+$\square$ $P(x_t \mid e_t, d_t, c_t)$
+
+$\square$ $P(x_t, e_t, d_t, c_t)$
+
+$\square$ $P(x_t \mid e_t, d_t, c_t, c_{t-1})$
+
+$\square$ $P(x_t, e_t, d_t, c_t, c_{t-1})$
+
+$\square$ $P(e_t, d_t \mid x_t)P(c_t \mid e_t, d_t, c_{t-1})$
+
+$\square$ $P(e_t, d_t, c_t \mid x_t)$
+
+$\bigcirc$ 1 
+
+Suppose we want to do the above updates in one step and use normalization to reduce computation. Select all the terms that are *not explicitly calculated* in this implementation.
+
+DO **NOT** include the choices if their values are 1.
+
+$\square$ **($ii$)** $\square$ **($iii$)** $\square$ **($iv$)** $\square$ **($v$)** $\square$ **($vi$)** $\square$ **($vii$)** $\bigcirc$ None of the above
 
 # Planning ahead with HMMs (12 points)
 
