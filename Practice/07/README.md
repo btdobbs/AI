@@ -149,7 +149,7 @@ What is the value of this new offer?
 
 ```
 
-5. Monty is generalizing his offer: you can pay $$d^3$ to open $d$ doors as in the previous part. (Assume that $U(\$x)=x$.) You may now switch your choice to any of the open doors (or keep your initial choice). What is the largest value of $d$ for which it would be rational to accept the offer?
+5. Monty is generalizing his offer: you can pay $ \$d^3$ to open $d$ doors as in the previous part. (Assume that $ U(\$x)=x$.) You may now switch your choice to any of the open doors (or keep your initial choice). What is the largest value of $d$ for which it would be rational to accept the offer?
 
 ```
 
