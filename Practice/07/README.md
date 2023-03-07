@@ -80,6 +80,10 @@ following six samples for $(W_1, I_1, W_2, I_2)$, given the evidence $I_1 = T$ a
 ```
 
 
+
+
+
+
 ```
 
 4. Estimate $P(W_2 \mid I_1 = T, I_2 = F)$ using our likelihood weights from the previous part.
@@ -89,6 +93,67 @@ following six samples for $(W_1, I_1, W_2, I_2)$, given the evidence $I_1 = T$ a
 
 ```
 
-# VPI
+# VPI (5 points)
 
+You are the latest contestant on Monty Hall’s game show, which has undergone a few changes over the years. In the game, there are 𝑛 closed doors: behind one door is a car $(U(\text{car}) = 1000)$, while the other $n-1$ doors each have a goat behind them $(U(\text{goat}) = 10)$. You are permitted to open exactly one door and claim the prize behind it.
+
+You begin by choosing a door uniformly at random.
+
+1. What is your expected utility?
+
+```
+
+
+```
+
+2. After you choose a door but before you open it, Monty offers to open 𝑘 other doors, each of which are guaranteed to have a goat behind it. If you accept this offer, should you keep your original choice of a door, or switch to a new door? 
+
+$EU(\text{keep})$:
+
+```
+
+
+```
+
+$EU(\text{switch})$:
+
+```
+
+
+```
+
+Action that achieves $MEU$:
+
+```
+
+
+```
+
+3. What is the value of the information that Monty is offering you?
+
+```
+
+
+
+```
+
+4. Monty is changing his offer!
+
+After you choose your initial door, you are given the offer to choose any other door and open this second door. If you do, after you see what is inside the other door, you may switch your initial choice (to the newly opened door) or keep your initial choice.
+
+What is the value of this new offer?
+
+```
+
+
+
+```
+
+5. Monty is generalizing his offer: you can pay $$d^3$ to open $d$ doors as in the previous part. (Assume that $U(\$x)=x$.) You may now switch your choice to any of the open doors (or keep your initial choice). What is the largest value of $d$ for which it would be rational to accept the offer?
+
+```
+
+
+
+```
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
