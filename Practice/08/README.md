@@ -6,8 +6,71 @@ For questions with square checkboxes ($\square$), you may select one or more cho
 
 **Please show all work for credit.**
 
-# We Are Getting Close...
+# We Are Getting Close... (8 points)
 
-# Planning ahead with HMMs
+Mesut is trying to remotely control a car, which has gone out of his view. The unknown state of the car is represented by the random variable $X$. While Mesut can’t see the car itself, his high-tech sensors on the car provides two useful readings: an estimate (E) of the distance to the car in front, and a detection model (D) that detects if the car is headed into a wall. Using these two readings, Mesut applies the controls (C), which determine the velocity of the car by changing the acceleration. The Dynamic Bayes Net below describes the setup.
+
+1. For the above DBN, complete the equations for performing updates. (Hint: think about the prediction update and obser- vation update equations in the forward algorithm for HMMs.)
+
+Time elapse: **($i$)** = **($ii$)** **($iii$)** **($iv$)** $P(x_{t-1} \mid e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
+
+**($i$)**
+
+$\bigcirc$ $P(x_t)$
+
+$\bigcirc$ $P(x_t \mid e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
+
+$\bigcirc$ $P(e_t, d_t, c_t \mid e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
+
+**($ii$)**
+
+$\bigcirc$ $P(c_{0:t-1})$
+
+$\bigcirc$ $P(x_{0:t-1}, c_{0:t-1})$
+
+$\bigcirc$ $P(e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
+
+$\bigcirc$ $P(e_{0:t}, d_{0:t}, c_{0:t})$
+
+$\bigcirc$ 1
+
+**($iii$)**
+
+$\bigcirc$ $\sum_{x_{t-1}}
+
+$\bigcirc$ $\sum_{x_t}
+
+$\bigcirc$ $\max_{x_{t-1}}
+
+$\bigcirc$ $\max_{x_t}
+
+$\bigcirc$ 1
+
+**($iv$)**
+
+$\bigcirc$ $P(x_{t-1} \mid x_{t-2})$
+
+$\bigcirc$ $P(x_{t-1},x_{t-2})$
+
+$\bigcirc$ $P(x_t \mid e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
+
+$\bigcirc$ $P(x_t \mid x_{t-1})$
+
+$\bigcirc$ $P(x_t,x_{t-1})$
+
+$\bigcirc$ $P(x_t,e_{0:t-1}, d_{0:t-1}, c_{0:t-1})$
+
+$\bigcirc$ $P(x_t \mid x_{t-1}, c_{t-1})$
+
+$\bigcirc$ $P(x_t,x_{t-1}, c_{t-1})$
+
+$\bigcirc$ 1
+
+Update to incorporate new evidence at time $t$:
+
+
+
+
+# Planning ahead with HMMs (12 points)
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
