@@ -232,7 +232,7 @@ $\bigcirc$ $\max_T$
 
 $\bigcirc$ $\Pi_{t=1}^T$
 
-$\bigcirc$ $\sum_{t=1}^T$
+$$\bigcirc \sum_{t=1}^T$$
 
 $\bigcirc$ $\min_T$
 
