@@ -144,7 +144,7 @@ $\square$ $P(e_t, d_t, c_t \mid x_t)$
 
 $\bigcirc$ 1 
 
-Suppose we want to do the above updates in one step and use normalization to reduce computation. Select all the terms that are *not explicitly calculated* in this implementation.
+8. Suppose we want to do the above updates in one step and use normalization to reduce computation. Select all the terms that are *not explicitly calculated* in this implementation.
 
 DO **NOT** include the choices if their values are 1.
 
