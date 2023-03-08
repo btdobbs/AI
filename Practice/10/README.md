@@ -114,19 +114,42 @@ flowchart LR
 **$G_2$:**
 
 ```mermaid
-
+flowchart LR
+    id1[x] ---> id3
+    id2[w_1] ---> id3
+    id3((*)) ---> id5
+    id4[b_1] ---> id5
+    id5((+)) ---> id7
+    id6[w_2] ---> id7
+    id7((*)) ---> id8
+    id8[y]
 ```
 
 **$H_2$:**
 
 ```mermaid
-
+flowchart LR
+    id1[x] ---> id3
+    id2["[w_11,w_12]"] ---> id3
+    id3((*)) ---> id5
+    id4["[b_11,b_12]"] ---> id5
+    id5((+)) ---> id7
+    id6["[w_21,w_22]"] ---> id7
+    id7((*)) ---> id8
+    id8[y]
 ```
 
 **$G_3$:**
 
 ```mermaid
-
+flowchart LR
+    id1[x] ---> id3
+    id2["[w_11,w_12]"] ---> id3
+    id3((*)) ---> id5
+    id5((relu)) ---> id7
+    id6["[w_21,w_22]"] ---> id7
+    id7((*)) ---> id8
+    id8[y]
 ```
 
 **$H_3$:**
@@ -138,24 +161,65 @@ flowchart LR
 **$G_4$:**
 
 ```mermaid
+flowchart LR
+    id1[x] ---> id3
+    id2[w_1] ---> id3
+    id3((*)) ---> id5
+    id4[b_1] ---> id5
+    id5((+)) ---> id9
+    id9((relu)) ---> id7
+    id6[w_2] ---> id7
+    id7((*)) ---> id8
+    id8[y]
 ```
 
 **$H_4$:**
 
 ```mermaid
-
+flowchart LR
+    id1[x] ---> id3
+    id2["[w_11,w_12]"] ---> id3
+    id3((*)) ---> id5
+    id4["[b_11,b_12]"] ---> id5
+    id5((+)) ---> id9
+    id9((relu)) ---> id7
+    id6["[w_21,w_22]"] ---> id7
+    id7((*)) ---> id8
+    id8[y]
 ```
 
 **$G_5$:**
 
 ```mermaid
-
+flowchart LR
+    id1[x] ---> id3
+    id2[w_1] ---> id3
+    id3((*)) ---> id5
+    id4[b_1] ---> id5
+    id5((+)) ---> id9
+    id9((relu)) ---> id7
+    id6[w_2] ---> id7
+    id7((*)) ---> id11
+    id10[b_2] ---> id11
+    id11((+)) ---> id8
+    id8[y]
 ```
 
 **$H_5$:**
 
 ```mermaid
-
+flowchart LR
+    id1[x] ---> id3
+    id2["[w_11,w_12]"] ---> id3
+    id3((*)) ---> id5
+    id4["[b_11,b_12]"] ---> id5
+    id5((+)) ---> id9
+    id9((relu)) ---> id7
+    id6["[w_21,w_22]"] ---> id7
+    id7((*)) ---> id11
+    id10[b_2] ---> id11
+    id11((+)) ---> id8
+    id8[y]
 ```
 
 For each of the piecewise-linear functions below, mark all networks from the list above that can represent the function **exactly** on the range $x \in (-\infty, infty)$. In the networks above, 𝑟𝑒𝑙𝑢 denotes the element-wise ReLU nonlinearity: $\text{relu}(z) = \text{max}(0,z). The networks $G_i$ use 1-dimensional layers, while the networks $H_i$ have some 2-dimensional intermediate layers.
