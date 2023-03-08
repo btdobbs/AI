@@ -67,7 +67,7 @@ $q=$ `                                   `
 
 2. What is the probability that the next individual is Pacman given your observations? Express your answer in terms of the parameters $p_v$, $p_a$ and $q$ (you might not need all of them).
 
-$P(Y^{20} = 1 \mid X_v^{20}, X_a^{20})=$ `                                            `
+$P(Y^{20} = 1 \mid X_v^{20} = 1, X_a^{20} = 1)=$ `                                            `
 
 # Linear Separability (3 points)
 
