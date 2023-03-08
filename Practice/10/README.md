@@ -87,4 +87,110 @@ $\square$ Add more units to the hidden layers
 
 # Neural Networks: Representation (6 points)
 
+**$G_1$:**
+
+```mermaid
+```
+
+**$H_1$:**
+
+```mermaid
+```
+
+**$G_2$:**
+
+```mermaid
+```
+
+**$H_2$:**
+
+```mermaid
+```
+
+**$G_3$:**
+
+```mermaid
+```
+
+**$H_3$:**
+
+```mermaid
+```
+
+**$G_4$:**
+
+```mermaid
+```
+
+**$H_4$:**
+
+```mermaid
+```
+
+**$G_5$:**
+
+```mermaid
+```
+
+**$H_5$:**
+
+```mermaid
+```
+
+For each of the piecewise-linear functions below, mark all networks from the list above that can represent the function **exactly** on the range $x \in (-\infty, infty)$. In the networks above, 𝑟𝑒𝑙𝑢 denotes the element-wise ReLU nonlinearity: $\text{relu}(z) = \text{max}(0,z). The networks $G_i$ use 1-dimensional layers, while the networks $H_i$ have some 2-dimensional intermediate layers.
+
+1. Graph 1
+
+$\square$ $G_1$ $\square$ $H_1$  
+$\square$ $G_2$ $\square$ $H_2$  
+$\square$ $G_3$ $\square$ $H_3$  
+$\square$ $G_4$ $\square$ $H_4$  
+$\square$ $G_5$ $\square$ $H_5$  
+$\bigcirc$ None of the above  
+
+2. Graph 2
+
+$\square$ $G_1$ $\square$ $H_1$  
+$\square$ $G_2$ $\square$ $H_2$  
+$\square$ $G_3$ $\square$ $H_3$  
+$\square$ $G_4$ $\square$ $H_4$  
+$\square$ $G_5$ $\square$ $H_5$  
+$\bigcirc$ None of the above  
+
+3. Graph 3
+
+$\square$ $G_1$ $\square$ $H_1$  
+$\square$ $G_2$ $\square$ $H_2$  
+$\square$ $G_3$ $\square$ $H_3$  
+$\square$ $G_4$ $\square$ $H_4$  
+$\square$ $G_5$ $\square$ $H_5$  
+$\bigcirc$ None of the above  
+
+4. Graph 4
+
+$\square$ $G_1$ $\square$ $H_1$  
+$\square$ $G_2$ $\square$ $H_2$  
+$\square$ $G_3$ $\square$ $H_3$  
+$\square$ $G_4$ $\square$ $H_4$  
+$\square$ $G_5$ $\square$ $H_5$  
+$\bigcirc$ None of the above  
+
+5. Graph 5
+
+$\square$ $G_1$ $\square$ $H_1$  
+$\square$ $G_2$ $\square$ $H_2$  
+$\square$ $G_3$ $\square$ $H_3$  
+$\square$ $G_4$ $\square$ $H_4$  
+$\square$ $G_5$ $\square$ $H_5$  
+$\bigcirc$ None of the above  
+
+6. Graph 6
+
+$\square$ $G_1$ $\square$ $H_1$  
+$\square$ $G_2$ $\square$ $H_2$  
+$\square$ $G_3$ $\square$ $H_3$  
+$\square$ $G_4$ $\square$ $H_4$  
+$\square$ $G_5$ $\square$ $H_5$  
+$\bigcirc$ None of the above  
+
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
