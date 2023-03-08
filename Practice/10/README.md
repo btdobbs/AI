@@ -162,6 +162,8 @@ For each of the piecewise-linear functions below, mark all networks from the lis
 
 1. Graph 1
 
+![g1](https://github.com/btdobbs/AI/blob/main/Practice/10/g1.png)
+
 $\square$ $G_1$ $\square$ $H_1$  
 $\square$ $G_2$ $\square$ $H_2$  
 $\square$ $G_3$ $\square$ $H_3$  
@@ -170,6 +172,8 @@ $\square$ $G_5$ $\square$ $H_5$
 $\bigcirc$ None of the above  
 
 2. Graph 2
+
+![g2](https://github.com/btdobbs/AI/blob/main/Practice/10/g2.png)
 
 $\square$ $G_1$ $\square$ $H_1$  
 $\square$ $G_2$ $\square$ $H_2$  
@@ -180,6 +184,8 @@ $\bigcirc$ None of the above
 
 3. Graph 3
 
+![g3](https://github.com/btdobbs/AI/blob/main/Practice/10/g3.png)
+
 $\square$ $G_1$ $\square$ $H_1$  
 $\square$ $G_2$ $\square$ $H_2$  
 $\square$ $G_3$ $\square$ $H_3$  
@@ -188,6 +194,8 @@ $\square$ $G_5$ $\square$ $H_5$
 $\bigcirc$ None of the above  
 
 4. Graph 4
+
+![g4](https://github.com/btdobbs/AI/blob/main/Practice/10/g4.png)
 
 $\square$ $G_1$ $\square$ $H_1$  
 $\square$ $G_2$ $\square$ $H_2$  
@@ -198,6 +206,8 @@ $\bigcirc$ None of the above
 
 5. Graph 5
 
+![g5](https://github.com/btdobbs/AI/blob/main/Practice/10/g5.png)
+
 $\square$ $G_1$ $\square$ $H_1$  
 $\square$ $G_2$ $\square$ $H_2$  
 $\square$ $G_3$ $\square$ $H_3$  
@@ -206,6 +216,8 @@ $\square$ $G_5$ $\square$ $H_5$
 $\bigcirc$ None of the above  
 
 6. Graph 6
+
+![g6](https://github.com/btdobbs/AI/blob/main/Practice/10/g6.png)
 
 $\square$ $G_1$ $\square$ $H_1$  
 $\square$ $G_2$ $\square$ $H_2$  
