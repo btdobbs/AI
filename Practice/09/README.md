@@ -154,4 +154,146 @@ $P(Y^{20} = 1, X_v^{20} = 1, X_a^{20} = 1, Y^{19} = 1, Y^{18} = 1)=$ `
 
 # Linear Separability (3 points)
 
+For each of the datasets represented by the graphs below, please select the feature maps for which the perceptron algorithm can perfectly classify the data.
+
+Each data point is in the form ($x_1, x_2$), and has some label $Y$ , which is either a 1 (dot) or −1 (cross).
+
+1. Graph 1
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+1
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+x_1^2
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+|x_1|
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+Y
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2
+\end{bmatrix}
+$$
+
+2. Graph 2
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+1
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+x_1^2
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+|x_1|
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+Y
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2
+\end{bmatrix}
+$$
+
+3. Graph 3
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+1
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+x_1^2
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+|x_1|
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2 &
+Y
+\end{bmatrix}
+$$
+
+$$
+\square
+\begin{bmatrix}
+x_1 &
+x_2
+\end{bmatrix}
+$$
+
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
