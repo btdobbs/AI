@@ -77,8 +77,9 @@ Now, assume that you are given additional information: you are told that the ind
 | second observation $X_a^i$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |   | 0 | 0  | 1  | 1  | 0  | 0  | 0  | 0  | 0  |   | 0  | 0  |
 | individual’s type $Y^i$    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |   | 1 | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 0  |   | 0  | 0  |
 
-| bus $j$        | 0 |   | 1 |   |   |
+|                |   |   |   |   |   |
 | -------------- | - | - | - | - | - |
+| bus $j$        | 0 |   | 1 |   |   |
 | bus type $Z^j$ | 0 |   | 1 |   |   |
 
 You can model this using a variant of naïve bayes, where now 9 consecutive labels $𝑌^i, \cdots , Y^{i+8}$ are *conditionally* independent given the bus type $Z^j$, for bus $j$ and individual $i = 9j$. Assume the probability distributions take on the following form:
