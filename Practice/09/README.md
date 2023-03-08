@@ -69,6 +69,8 @@ $q=$ `                                   `
 
 $P(Y^{20} = 1 \mid X_v^{20} = 1, X_a^{20} = 1)=$ `                                            `
 
+Now, assume that you are given additional information: you are told that the individuals are actually coming out of a bus that just arrived, and each bus carries *exactly* 9 individuals. Unlike before, the types of every 9 consecutive individuals are *conditionally* independent given the bus type, which is denoted by $Z$. Only after all of the 9 individuals have walked out, you find out the bus type: one that carries mostly Pacmans ($Z=1$) or one that carries mostly ghosts ($Z=0$). Thus, you only know the bus type in which the first 18 individuals came in:
+
 # Linear Separability (3 points)
 
 [^1]: [Berkeley Computer Science](http://ai.berkeley.edu)
