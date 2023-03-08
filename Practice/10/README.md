@@ -90,31 +90,49 @@ $\square$ Add more units to the hidden layers
 **$G_1$:**
 
 ```mermaid
+flowchart LR
+    id1[x] ---> id3
+    id2[w_1] ---> id3
+    id3((*))  ---> id5
+    id4[w_2]  ---> id5
+    id5((*))  ---> id6
+    id6[y]
 ```
 
 **$H_1$:**
 
 ```mermaid
+flowchart LR
+    id1[x] ---> id3
+    id2["[w_11,w_12]"] ---> id3
+    id3((*))  ---> id5
+    id4["[w_21,w_22]"]  ---> id5
+    id5((*))  ---> id6
+    id6[y]
 ```
 
 **$G_2$:**
 
 ```mermaid
+
 ```
 
 **$H_2$:**
 
 ```mermaid
+
 ```
 
 **$G_3$:**
 
 ```mermaid
+
 ```
 
 **$H_3$:**
 
 ```mermaid
+
 ```
 
 **$G_4$:**
@@ -125,16 +143,19 @@ $\square$ Add more units to the hidden layers
 **$H_4$:**
 
 ```mermaid
+
 ```
 
 **$G_5$:**
 
 ```mermaid
+
 ```
 
 **$H_5$:**
 
 ```mermaid
+
 ```
 
 For each of the piecewise-linear functions below, mark all networks from the list above that can represent the function **exactly** on the range $x \in (-\infty, infty)$. In the networks above, 𝑟𝑒𝑙𝑢 denotes the element-wise ReLU nonlinearity: $\text{relu}(z) = \text{max}(0,z). The networks $G_i$ use 1-dimensional layers, while the networks $H_i$ have some 2-dimensional intermediate layers.
