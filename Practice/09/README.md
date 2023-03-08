@@ -25,10 +25,10 @@ on the following form:
 
 ```mermaid
 flowchart LR
-    id1((Y-i)) ---> id2
+    id1((Y^i)) ---> id2
     id1 ---> id3
-    id2((X-vi))
-    id3((X-ai))
+    id2((X_v^i))
+    id3((X_a^i))
 ```
 
 $$
@@ -70,6 +70,87 @@ $q=$ `                                   `
 $P(Y^{20} = 1 \mid X_v^{20} = 1, X_a^{20} = 1)=$ `                                            `
 
 Now, assume that you are given additional information: you are told that the individuals are actually coming out of a bus that just arrived, and each bus carries *exactly* 9 individuals. Unlike before, the types of every 9 consecutive individuals are *conditionally* independent given the bus type, which is denoted by $Z$. Only after all of the 9 individuals have walked out, you find out the bus type: one that carries mostly Pacmans ($Z=1$) or one that carries mostly ghosts ($Z=0$). Thus, you only know the bus type in which the first 18 individuals came in:
+
+| individual $i$             | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |   | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 |   | 18 | 19 |
+| -------------------------- | - | - | - | - | - | - | - | - | - | - | - | -- | -- | -- | -- | -- | -- | -- | -- | - | -- | -- |
+| first observation $X_v^i$  | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 1 | 1 |   | 1 | 0  | 1  | 1  | 0  | 1  | 1  | 1  | 0  |   | 0  | 0  |
+| second observation $X_a^i$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |   | 0 | 0  | 1  | 1  | 0  | 0  | 0  | 0  | 0  |   | 0  | 0  |
+| individual’s type $Y^i$    | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |   | 1 | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 0  |   | 0  | 0  |
+
+| bus $j$        | 0 |   | 1 |   |   |
+| -------------- | - | - | - | - | - |
+| bus type $Z^j$ | 0 |   | 1 |   |   |
+
+You can model this using a variant of naïve bayes, where now 9 consecutive labels $𝑌^i, \cdots , Y^{i+8}$ are *conditionally* independent given the bus type $Z^j$, for bus $j$ and individual $i = 9j$. Assume the probability distributions take on the following form:
+
+$$
+\begin{equation}
+  P(X_v^i = x_v \mid Y^i = y) = 
+    \begin{cases}
+      p_v & \text{ if } x_v = y \\
+      1-p_v & \text{ if } x_v =\ne y \\
+    \end{cases}       
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  P(X_a^i = x_a \mid Y^i = y) = 
+    \begin{cases}
+      p_a & \text{ if } x_a = y \\
+      1-p_a & \text{ if } x_a =\ne y \\
+    \end{cases}       
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  P(Y^i = 1 \mid Z^j = z) = 
+    \begin{cases}
+      q_0 & \text{ if } z = 0 \\
+      q_1 & \text{ if } z = 1 \\
+    \end{cases}       
+\end{equation}
+$$
+
+$$
+P(Z^j = 1) = r
+$$
+
+for $p, q_0, q_1, r \in \[0,1\]$ and $i,j \in \mathbb{N}$
+
+```mermaid
+flowchart TD
+    id1((Z^j)) ---> id2
+    id1 ---> id3
+    id1 ---> id4
+    id2((Y^i)) ---> id5
+    id2 ---> id6
+    id3((Y^i+1)) ---> id7
+    id3 ---> id8
+    id4((Y^i+8)) ---> id9
+    id4 ---> id10
+    id5((X_v^i))
+    id6((X_a^i))
+    id7((X_v^i+1))
+    id8((X_a^i+1))
+    id9((X_v^i+8))
+    id10((X_a^i+8))
+```
+
+3. What’s the maximum likelihood estimate of $q_0$, $q_1$ and $r$?
+
+$q_0=$ `                                   `
+
+$q_1=$ `                                   `
+
+$r=$ `                                   `
+
+4. Compute the following joint probability. Simplify your answer as much as possible and express it in terms of the parameters $p_v$, $p_a$, $q_0$, $q_1$ and $r$ (you might not need all of them).
+
+$P(Y^{20} = 1, X_v^{20} = 1, X_a^{20} = 1, Y^{19} = 1, Y^{18} = 1)=$ `  
+
+
 
 # Linear Separability (3 points)
 
