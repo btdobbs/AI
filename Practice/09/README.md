@@ -51,6 +51,8 @@ $$
 \end{equation}
 $$
 
+$P(Y^u = 1) = q$
+
 for $p_v, p_a, q \in \[0,1\]$ and $i \in \mathbb{N}$
 
 1. What’s the maximum likelihood estimate of $p_v$, $p_a$ and $q$?
