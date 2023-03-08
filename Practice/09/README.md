@@ -160,6 +160,8 @@ Each data point is in the form ($x_1, x_2$), and has some label $Y$ , which is e
 
 1. Graph 1
 
+![g1](https://github.com/btdobbs/AI/blob/main/Practice/09/g1.png)
+
 $$
 \square
 \begin{bmatrix}
@@ -206,6 +208,8 @@ $$
 
 2. Graph 2
 
+![g2](https://github.com/btdobbs/AI/blob/main/Practice/09/g2.png)
+
 $$
 \square
 \begin{bmatrix}
@@ -251,6 +255,8 @@ x_2
 $$
 
 3. Graph 3
+
+![g3](https://github.com/btdobbs/AI/blob/main/Practice/09/g3.png)
 
 $$
 \square
